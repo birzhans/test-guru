@@ -1,24 +1,16 @@
-# README
+## Test-Guru
+### website for providing tests
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### Entities of website
 
-Things you may want to cover:
+* Teacher - an author of test.
 
-* Ruby version
+* Student - person which passes test.
 
-* System dependencies
+* Test - an object containing set of questions.
 
-* Configuration
+* Question - a data that is asked.
 
-* Database creation
+* Answer - reply to a question.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Result - data on how student have passed a test.
