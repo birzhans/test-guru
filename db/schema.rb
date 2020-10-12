@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_07_211652) do
+ActiveRecord::Schema.define(version: 2020_10_12_060350) do
 
   create_table "answers", force: :cascade do |t|
     t.text "body"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_10_07_211652) do
   create_table "tests_users", id: false, force: :cascade do |t|
     t.integer "test_id", null: false
     t.integer "user_id", null: false
-    t.index ["test_id", "user_id"], name: "index_tests_users_on_test_id_and_user_id"
+    t.index ["test_id", "user_id"], name: "index_tests_users_on_test_id_and_user_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|

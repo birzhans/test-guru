@@ -1,0 +1,2 @@
+class CreateTestsUsersJoinTable < ApplicationRecord
+end
