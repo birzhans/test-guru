@@ -1,2 +1,0 @@
-class CreateTestsUsersJoinTable < ApplicationRecord
-end
