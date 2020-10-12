@@ -5,24 +5,33 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+users = User.create!([
+   {
+     username: 'jack', email: 'jack@mail.com',
+     password: jack_isBest, test: tests.last
+  }
+ ])
+
 categories = Category.create!([
    { title: 'history' },
    { title: 'math' }
  ])
 
-  tests = Test.create!([
-   { title: 'WW1', level: 1, category:  categories.first },
-   { title: 'geometry', level: 2, category: categories.last }
+tests = Test.create!([
+   { title: 'WW1', level: 1, category:  categories.first,
+     author_id: users[0].id },
+   { title: 'geometry', level: 2, category: categories.last
+     author_id: users[0].id }
  ])
 
-  questions = Question.create!([
+questions = Question.create!([
    { body: 'what year did ww1 started?', test: tests.first },
    { body: 'which country made declaration of ww1?', test: tests.first },
    { body: 'how to find S of triangle?', test: tests.last },
    { body: 'sin of 60?', test: tests.last }
  ])
 
-  answers = Answer.create!([
+answers = Answer.create!([
    { body: '1994', question: questions.first },
    { body: '1894', question: questions.first },
    { body: '1995', question: questions.first },
@@ -30,9 +39,4 @@ categories = Category.create!([
    { body: '0.5*a^2', question: questions.last },
  ])
 
-  users = User.create!([
-   {
-     username: 'jack', email: 'jack@mail.com',
-     password: jack_isBest, test: tests.last
-  }
- ])
+
