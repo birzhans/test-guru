@@ -8,4 +8,7 @@ class Test < ApplicationRecord
        .order(title: :desc)
        .pluck(:id)
   end
+
+  belongs_to :category
+  has_many :questions
 end
