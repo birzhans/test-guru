@@ -5,6 +5,7 @@ class Test < ApplicationRecord
   has_many :tests_users, dependent: :destroy
   has_many :users, through: :tests_users
 
+
   validates :title, presence: true, uniqueness: { scope: [:title, :level] }
   validates :level, numericality: {
     only_integer: true,
@@ -16,11 +17,6 @@ class Test < ApplicationRecord
   scope :medium, -> { where(level: 2..4) }
   scope :advanced, -> { where(level: 5..Float::INFINITY) }
 
-  scope :by_category, -> (category_name) do
-     joins(:category)
-       .where("categories.title = ?", category_name)
-       .order(title: :desc)
-  end
 
   scope :by_category, -> (category_name) do
           joins(:category)
@@ -28,7 +24,7 @@ class Test < ApplicationRecord
             .order(title: :desc)
         end
 
-  def self.titles_by_category(name)
+  def self.tests_by_category(name)
     by_category(name).pluck(:title)
   end
 
