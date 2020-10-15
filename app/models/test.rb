@@ -18,14 +18,14 @@ class Test < ApplicationRecord
   scope :advanced, -> { where(level: 5..Float::INFINITY) }
 
 
-  scope :by_category, -> (category_name) do
-          joins(:category)
-            .where(categories: { title: category_name })
-            .order(title: :desc)
-        end
+  scope :by_category, -> (category_name) { joins(:category) }
 
-  def self.tests_by_category(name)
-    by_category(name).pluck(:title)
+
+  def self.tests_by_category(category_name)
+    by_category(category_name)
+    .where(categories: { title: category_name })
+    .order(title: :desc)
+    .pluck(:title)
   end
 
 end
