@@ -1,9 +1,9 @@
 class QuestionsController < ApplicationController
-  before_action :find_questions, only: %i[index]
-  before_action :find_question, only: %i[show]
+  before_action :find_question, only: %i[show destroy]
+  before_action :find_test, only: %i[index create new]
 
   def index
-    render plain: @questions
+    render plain: @test.questions
   end
 
   def show
@@ -11,19 +11,28 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = Question.create!(question_params)
-    render plain: question.inspect
+    question = @test.questions.new(question_params)
+
+    if question.valid?
+      question.save
+      render plain: question.inspect
+    else
+      render plain: question.errors.messages
+    end
   end
 
   def destroy
-    question = Question.destroy(@question)
-    render html: 'question with id <%= @question.id %> was deleted.'
+    @question.destroy
+  end
+
+  def new
+    @question = @test.questions.new
   end
 
   private
 
-  def find_questions
-    @questions = Test.find(params[:test_id]).questions
+  def find_test
+    @test = Test.find(params[:test_id])
   end
 
   def find_question
@@ -31,8 +40,6 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    question_params = params.require(:question).permit(:body, :test_id)
-    question_params[:test_id] = params[:test_id]
-    question_params
+    params.require(:question).permit(:body)
   end
 end
