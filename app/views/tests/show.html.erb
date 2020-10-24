@@ -12,3 +12,10 @@
 	<strong>Category: </strong>
 	<%= @test.category_id %>
 </p>
+
+<p>Questions:</p>
+<ul>
+	<%= @test.questions.each do |question| %>
+		<li><%= question.body %></li>
+	<% end %>
+</ul>
