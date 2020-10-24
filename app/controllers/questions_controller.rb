@@ -17,8 +17,7 @@ class QuestionsController < ApplicationController
   def create
     question = @test.questions.new(question_params)
 
-    if question.valid?
-      question.save
+    if question.save
       render plain: question.inspect
     else
       render plain: question.errors.messages
@@ -26,7 +25,6 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-    @question
   end
 
   def update
