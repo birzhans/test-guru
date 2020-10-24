@@ -7,11 +7,5 @@
 		<th>Category</th>
 	</tr>
 
-	<% @tests.each do |test| %>
-		<tr>
-			<th> <%= test.title %> </th>
-			<th> <%= test.level %> </th>
-			<th> <%= test.category_id %> </th>
-		</tr>
-	<% end %>
+	<%= render @tests %>
 </table>
