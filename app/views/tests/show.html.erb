@@ -14,8 +14,13 @@
 </p>
 
 <p>Questions:</p>
+
 <ul>
 	<%= @test.questions.each do |question| %>
 		<li><%= question.body %></li>
 	<% end %>
 </ul>
+
+<p>
+	<%= link_to 'All tests', tests_path %> | <%= link_to 'Edit', edit_test_path(@test) %>		
+</p>

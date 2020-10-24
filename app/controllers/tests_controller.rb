@@ -1,5 +1,5 @@
 class TestsController < ApplicationController
-  before_action :find_test, only: %i[show edit update]
+  before_action :find_test, only: %i[destroy show edit update]
   def index
     @tests = Test.all
   end
@@ -32,6 +32,11 @@ class TestsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @test.destroy
+    redirect_to tests_path
   end
 
   private
