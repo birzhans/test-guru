@@ -1,9 +1,9 @@
 class TestsController < ApplicationController
   def index
-    render html: '<h1>Test-guru: website for running tests</h1>'.html_safe
+    @tests = Test.all
   end
 
   def show
-    redirect_to root_path
+    @test = Test.find(params[:id])
   end
 end
