@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :find_question, only: %i[show destroy]
+  before_action :find_question, only: %i[show destroy edit update]
   before_action :find_test, only: %i[index create new]
 
   def index
@@ -10,14 +10,28 @@ class QuestionsController < ApplicationController
     render plain: @question.body
   end
 
+  def new
+    @question = @test.questions.new
+  end
+
   def create
     question = @test.questions.new(question_params)
 
-    if question.valid?
-      question.save
+    if question.save
       render plain: question.inspect
     else
       render plain: question.errors.messages
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render :new
     end
   end
 
@@ -25,9 +39,6 @@ class QuestionsController < ApplicationController
     @question.destroy
   end
 
-  def new
-    @question = @test.questions.new
-  end
 
   private
 
