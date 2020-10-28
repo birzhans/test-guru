@@ -27,8 +27,4 @@ class Test < ApplicationRecord
     .order(title: :desc)
     .pluck(:title)
   end
-
-  def label
-    Category.find(self.category_id).title
-  end
 end
