@@ -10,12 +10,12 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = @test.questions.new(question_params)
+    @question = @test.questions.new(question_params)
 
-    if question.save
-      render plain: question.inspect
+    if @question.save
+      redirect_to @question
     else
-      render plain: question.errors.messages
+      render :new
     end
   end
 
@@ -32,6 +32,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
+    redirect_to @question.test
   end
 
 
