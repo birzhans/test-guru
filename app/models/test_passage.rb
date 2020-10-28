@@ -4,18 +4,31 @@ class TestPassage < ApplicationRecord
   belongs_to :question, optional: true
 
   before_validation :before_validate_set_first_question, on: :create
+  before_validation :before_validation_set_next_question, on: :update
+
+  POINTS_TO_COMPLETE = 85
 
   def accept!(answer_ids)
     if correct_answer?(answer_ids)
       self.correct_questions += 1
     end
-
-    self.question = next_question
     save!
   end
 
   def completed?
-    question.nil?
+    self.question.nil?
+  end
+
+  def score
+    correct_questions * 100 / test.questions.count
+  end
+
+  def passed?
+    score >= POINTS_TO_COMPLETE
+  end
+
+  def question_index
+    test.questions.index(question) + 1
   end
 
   private
@@ -32,7 +45,7 @@ class TestPassage < ApplicationRecord
     self.question.answers.correct
   end
 
-  def next_question
-    test.questions.order(:id).where('id > ?', question.id).first
+  def before_validation_set_next_question
+    self.question = test.questions.order(:id).where('id > ?', self.question.id).first
   end
 end

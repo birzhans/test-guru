@@ -6,5 +6,12 @@ body {
 
 a {
 	color: blue;
+}
 
+.success {
+	color: green;
+}
+
+.fail {
+	color: red;
 }
