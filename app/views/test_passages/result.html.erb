@@ -1,0 +1,7 @@
+<h1><%= @test_passage.test.title %> test</h1>
+
+<% if @test_passage.passed? %>
+	<p class="success">Completed successfully: <%= @test_passage.score %>%</p>
+<% else %>
+	<p class="fail">Failed: <%= @test_passage.score %>%</p>
+<% end %>

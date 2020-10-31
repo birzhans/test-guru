@@ -10,15 +10,15 @@
 
 <p>
 	<strong>Category: </strong>
-	<%= @test.category_id %>
+	<%= @test.label %>
 </p>
 
 <p>Questions:</p>
 
+<%= link_to 'New question', new_test_question_path(@test) %>
+
 <ul>
-	<%= @test.questions.each do |question| %>
-		<li><%= question.body %></li>
-	<% end %>
+	<%= render @test.questions %>
 </ul>
 
 <p>
