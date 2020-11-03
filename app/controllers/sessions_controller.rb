@@ -22,7 +22,11 @@ class SessionsController < ApplicationController
   private
 
   def redirect_to_back
-    redirect_to cookies[:previous_url] || root_path
+    if cookies[:previous_url] != login_path
+      redirect_to cookies[:previous_url]
+    else
+      cookies[:previous_url]
+    end
     cookies[:previous_url] = nil
   end
 end
