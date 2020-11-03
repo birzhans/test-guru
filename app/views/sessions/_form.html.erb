@@ -1,7 +1,7 @@
 <%= form_with url: sessions_path, local: true do |form| %>
-	<% if flash[:alert] %>
-		<%= content_tag :p, flash[:alert], class: 'flash alert' %>
-	<% end %>
+
+	<%= flash_message(:alert) %>
+
 	<p>
 		<%= form.label :email %><br>
 		<%= form.text_field :email, id: :email %>
@@ -13,4 +13,6 @@
 	</p>
 
 	<p><%= form.submit 'Enter' %></p>
+
+	Don't have account? <%= link_to 'Register', signup_path %>
 <% end %>

@@ -5,7 +5,12 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  validates :email, presence: true
+  validates :email, presence: true,
+                    uniqueness: true,
+                    format: {
+                      with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i,
+                      message: 'Invalid email format!'
+                    }
 
   def tests_by_level(level)
     tests.where(level: level)
