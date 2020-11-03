@@ -1,1 +1,10 @@
-<%= link_to 'Home', root_path %><br>
+<div>
+	<%= link_to 'Test-Guru', root_path %> |
+	<% if logged_in? %>
+	  Welcome, <b><%= current_user.email %></b> Guru! |
+	  <%= link_to 'Log out', logout_path, method: "delete" %>
+	<% else %>
+		<%= link_to 'Log in', login_path %> |
+		<%= link_to 'Register', signup_path %>
+	<% end %>
+</div>

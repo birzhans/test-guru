@@ -1,10 +1,16 @@
 class User < ApplicationRecord
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
-  has_many :tests_created, class_name:"Test", foreign_key: "author_id",
-  dependent: :nullify
+  has_many :tests_created, class_name:"Test", foreign_key: "author_id", dependent: :nullify
 
-  validates :email, presence: true
+  has_secure_password
+
+  validates :email, presence: true,
+                    uniqueness: true,
+                    format: {
+                      with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i,
+                      message: 'Invalid email format!'
+                    }
 
   def tests_by_level(level)
     tests.where(level: level)
