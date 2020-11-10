@@ -20,10 +20,10 @@
 
 <p>Questions:</p>
 
-<%= link_to 'New question', new_test_question_path(@test) %>
+<%= link_to 'New question', new_admin_test_question_path(@test) %>
 
 <ul>
-	<%= render partial: 'questions/question', collection: @test.questions %>
+	<%= render partial: 'admin/questions/question', collection: @test.questions %>
 </ul>
 
 <p>
