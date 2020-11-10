@@ -1,4 +1,7 @@
 class AnswersController < ApplicationController
+
+  layout 'admin'
+
   before_action :admin_required!
   before_action :find_answer, only: %i[show edit update destroy]
   before_action :find_question, only: %i[new create]

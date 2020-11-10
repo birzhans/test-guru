@@ -27,4 +27,9 @@ class Test < ApplicationRecord
     .order(title: :desc)
     .pluck(:title)
   end
+
+  def author
+    author = Admin.find_by(id: self.author_id)
+    "#{author.first_name} #{author.last_name}"
+  end
 end

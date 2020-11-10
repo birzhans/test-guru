@@ -13,6 +13,11 @@
 	<%= @test.category.title %>
 </p>
 
+<p>
+	<strong>Author: </strong>
+	<%= @test.author %>
+</p>
+
 <p>Questions:</p>
 
 <%= link_to 'New question', new_test_question_path(@test) %>
