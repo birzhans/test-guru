@@ -6,8 +6,15 @@
 		<th>Level</th>
 		<th>Category</th>
 		<th>Questions</th>
-		<th>Actions</th>
+		<th colspan="3">Actions</th>
 	</tr>
 
 	<%= render @tests %>
 </table>
+
+<p>
+	<%= link_to 'New test', new_admin_test_path %>
+</p>
+
+
+

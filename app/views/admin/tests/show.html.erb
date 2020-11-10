@@ -18,9 +18,9 @@
 <%= link_to 'New question', new_test_question_path(@test) %>
 
 <ul>
-	<%= render @test.questions %>
+	<%= render partial: 'questions/question', collection: @test.questions %>
 </ul>
 
 <p>
-	<%= link_to 'All tests', tests_path %> | <%= link_to 'Edit', edit_test_path(@test) %>		
+	<%= link_to 'All tests', admin_tests_path %> | <%= link_to 'Edit', edit_admin_test_path(@test) %>		
 </p>
