@@ -1,4 +1,5 @@
 class TestsController < ApplicationController
+  skip_before_action :admin_required!
   before_action :find_test, only: :start
 
   def index

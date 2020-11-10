@@ -2,7 +2,6 @@ class QuestionsController < ApplicationController
 
   layout 'admin'
 
-  before_action :admin_required!
   before_action :find_question, only: %i[show destroy edit update]
   before_action :find_test, only: %i[create new]
 
@@ -41,10 +40,6 @@ class QuestionsController < ApplicationController
 
 
   private
-
-  def admin_required!
-    redirect_to root_path, alert: 'You are not authorized to view this page.' unless current_user.is_a?(Admin)
-  end
 
   def find_test
     @test = Test.find(params[:test_id])

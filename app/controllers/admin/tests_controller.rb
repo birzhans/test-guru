@@ -1,5 +1,4 @@
 class Admin::TestsController < Admin::BaseController
-  skip_before_action :authenticate_user!
   before_action :find_test, only: %i[destroy show edit update start]
 
   def index

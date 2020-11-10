@@ -1,4 +1,5 @@
 class TestPassagesController < ApplicationController
+  skip_before_action :admin_required!
   before_action :find_test_passage, only: %i[show result update]
 
   def show

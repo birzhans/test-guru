@@ -2,7 +2,6 @@ class AnswersController < ApplicationController
 
   layout 'admin'
 
-  before_action :admin_required!
   before_action :find_answer, only: %i[show edit update destroy]
   before_action :find_question, only: %i[new create]
 
@@ -41,10 +40,6 @@ class AnswersController < ApplicationController
 
 
   private
-
-  def admin_required!
-    redirect_to root_path, alert: 'You are not authorized to view this page.' unless current_user.is_a?(Admin)
-  end
 
   def find_answer
     @answer = Answer.find(params[:id])
