@@ -1,7 +1,4 @@
-class Admin::QuestionsController < ApplicationController
-
-  layout 'admin'
-
+class Admin::QuestionsController < Admin::BaseController
   before_action :find_question, only: %i[show destroy edit update]
   before_action :find_test, only: %i[create new]
 

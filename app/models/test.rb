@@ -1,6 +1,6 @@
 class Test < ApplicationRecord
   belongs_to :category
-
+  belongs_to :author, class_name: 'User', optional:true
   has_many :questions, dependent: :destroy
   has_many :test_passages, dependent: :destroy
   has_many :users, through: :test_passages
@@ -26,10 +26,5 @@ class Test < ApplicationRecord
     .where(categories: { title: category_name })
     .order(title: :desc)
     .pluck(:title)
-  end
-
-  def author
-    author = Admin.find_by(id: self.author_id)
-    "#{author.first_name} #{author.last_name}"
   end
 end
