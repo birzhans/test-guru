@@ -31,6 +31,7 @@
 
 en:
   helpers:
+    start: "Start"
     submit:
       tests:
         create: "Create test"
@@ -44,14 +45,17 @@ en:
 
 
   label:
-      test:
-        title: "Title"
-        level: "Level"
-        category_id: "Category"
+    test:
+      title: "Title"
+      level: "Level"
+      category_id: "Category"
 
   tests:
     index:
       header: "Tricky tests"
+      title: "Title"
+      category: "Category"
+      questions: "Questions"
 
   test_passages:
     result:
@@ -67,3 +71,21 @@ en:
   tests_mailer:
     completed_test:
       subject: "You just completed Test-Guru test!"
+
+  header:
+    welcome: 'Welcome'
+    logout: 'Log out'
+
+  footer:
+    author: '%{year}, Author: Birzhan Serik'
+    about: 'Test-Guru is a website for creating and passing tests'
+    thinknetica: "Rails basics course's project"
+
+
+
+
+
+
+
+
+

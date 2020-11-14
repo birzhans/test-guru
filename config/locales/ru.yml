@@ -1,5 +1,6 @@
 ru:
   helpers:
+    start: "Начать"
     submit:
       tests:
         create: "Создать тест"
@@ -23,6 +24,10 @@ ru:
   tests:
     index:
       header: "Доступные тесты"
+      title: "Название"
+      level: "Уровень"
+      category: "Категория"
+      questions: "Вопросы"
 
   admin:
     tests:
@@ -43,3 +48,12 @@ ru:
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на Test-Guru!"
+
+  header:
+    welcome: 'Добро пожаловать'
+    logout: 'Выйти'
+
+  footer:
+    author: '%{year}, Автор: Биржан Серик'
+    about: 'Test-Guru это сайт для создания и прохождения тестов'
+    thinknetica: 'Проект по базовому курсу Rails'

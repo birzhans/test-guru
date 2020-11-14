@@ -6,6 +6,7 @@ en:
     attributes:
       test:
         title: "Title"
+        level: "Level"
 
     errors:
       messages:
