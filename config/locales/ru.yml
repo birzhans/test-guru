@@ -27,14 +27,6 @@ ru:
       title: "Название"
       level: "Уровень"
       category: "Категория"
-      questions: "Вопросы"
-
-  admin:
-    tests:
-      create:
-        success: "Тест успешно создан"
-      index:
-        header: "Доступные тесты"
 
   test_passages:
     result:
@@ -56,4 +48,42 @@ ru:
     author: '%{year}, Автор: Биржан Серик'
     about: 'Test-Guru это сайт для создания и прохождения тестов'
     thinknetica: 'Проект по базовому курсу Rails'
-    
+
+
+  admin:
+    nav:
+      header: "Панель администратора Test-Guru"
+      welcome: 'Добро пожаловать'
+      logout: 'Выйти'
+
+    all_tests: "Все тесты"
+
+    tests:
+      new:
+        header: "Создать тест"
+      create:
+        success: "Тест успешно создан"
+
+      edit:
+        header: "Изменить тест"
+      update:
+        success: "Тест успешно изменен"
+
+      destroy:
+        success: "Тест успешно удален"
+
+      index:
+        actions: "Действия"
+        new: "Создать тест"
+
+
+      show:
+        author: "Автор"
+        questions: "Вопросы"
+        new: "Создать вопрос"
+
+      test:
+        show: "Посмотреть"
+        edit: "Редактировать"
+        delete: "Удалить"
+        message: "Вы уверены?"

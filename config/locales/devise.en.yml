@@ -8,6 +8,7 @@ en:
         password: "Password"
         password_confirmation: "Password confirmation"
 
+
   devise:
     shared:
       links:
@@ -77,6 +78,7 @@ en:
       new:
         header: "Enter TestGuru"
         login: "Log in"
+        remember_me: "Remember me"
 
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."

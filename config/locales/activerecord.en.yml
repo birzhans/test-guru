@@ -7,6 +7,7 @@ en:
       test:
         title: "Title"
         level: "Level"
+        category: "Category"
 
     errors:
       messages:
