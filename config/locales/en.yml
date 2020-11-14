@@ -31,3 +31,7 @@
 
 en:
   hello: "Hello world"
+
+  tests:
+    index:
+      header: "Tricky tests"
