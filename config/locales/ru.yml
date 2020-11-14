@@ -1,17 +1,24 @@
 ru:
   helpers:
     submit:
-      test:
+      tests:
         create: "Создать тест"
         update: "Обновить тест"
-
-    label:
-      test:
-        title: "Название"
-        level: "Уровень"
-        category_id: "Категория"
-
     select: "Пожалуйста выберите"
+
+  shared:
+      errors:
+        header:
+          few: "Обнаружено %{count} ошибки"
+          many: "Обнаружено %{count} ошибок"
+          one: "Обнаружена %{count} ошибка"
+          other: "%{Обнаружено %{count ошибки}"
+
+  label:
+    test:
+      title: "Название"
+      level: "Уровень"
+      category_id: "Категория"
 
   tests:
     index:
@@ -32,3 +39,7 @@ ru:
     failure:
       user:
         unauthenticated: "Войдите для получения доступа"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на Test-Guru!"

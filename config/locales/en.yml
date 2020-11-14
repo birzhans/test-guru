@@ -36,6 +36,13 @@ en:
         create: "Create test"
         update: "Update test"
 
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+
+
   label:
       test:
         title: "Title"
@@ -56,3 +63,7 @@ en:
         success: "Test was successfully created"
       index:
         header: "Tricky tests"
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed Test-Guru test!"
