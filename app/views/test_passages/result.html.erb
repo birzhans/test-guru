@@ -1,4 +1,4 @@
-<h1><%= @test_passage.test.title %> test</h1>
+<h1><%= t('.header', title:  @test_passage.test.title) %></h1>
 
 <% if @test_passage.passed? %>
 	<p class="success">Completed successfully: <%= @test_passage.score %>%</p>

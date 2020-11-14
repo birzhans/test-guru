@@ -1,6 +1,34 @@
 ru:
-  hello: "Привет, мир!"
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+
+    select: "Пожалуйста выберите"
 
   tests:
     index:
       header: "Доступные тесты"
+
+  admin:
+    tests:
+      create:
+        success: "Тест успешно создан"
+      index:
+        header: "Доступные тесты"
+
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершен!"
+
+  devise:
+    failure:
+      user:
+        unauthenticated: "Войдите для получения доступа"

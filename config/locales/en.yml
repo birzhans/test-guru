@@ -30,8 +30,29 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  helpers:
+    submit:
+      tests:
+        create: "Create test"
+        update: "Update test"
+
+  label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
 
   tests:
     index:
       header: "Tricky tests"
+
+  test_passages:
+    result:
+      header: "Test %{title} was successfully completed!"
+
+  admin:
+    tests:
+      create:
+        success: "Test was successfully created"
+      index:
+        header: "Tricky tests"
