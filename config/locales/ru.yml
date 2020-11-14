@@ -39,6 +39,10 @@ ru:
   test_passages:
     result:
       header: "Тест %{title} успешно завершен!"
+      success: "Вы прошли тест!"
+      fail: "Вы не прошли тест :("
+    show:
+      progress: "Прогресс"
 
   devise:
     failure:

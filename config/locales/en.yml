@@ -60,6 +60,10 @@ en:
   test_passages:
     result:
       header: "Test %{title} was successfully completed!"
+      success: "You have passed the test!"
+      fail: "You have failed the test :("
+    show:
+      progress: "Прогресс"
 
   admin:
     tests:

@@ -1,7 +1,7 @@
 <h1><%= t('.header', title:  @test_passage.test.title) %></h1>
 
 <% if @test_passage.passed? %>
-	<p class="success">Completed successfully: <%= @test_passage.score %>%</p>
+	<p class="success"><%= t('.success') %> <%= @test_passage.score %>%</p>
 <% else %>
-	<p class="fail">Failed: <%= @test_passage.score %>%</p>
+	<p class="fail"><%= t('.fail') %>: <%= @test_passage.score %>%</p>
 <% end %>
