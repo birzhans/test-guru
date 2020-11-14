@@ -4,7 +4,7 @@
 	  <%= t('header.welcome') %>, <b><%= current_user.email %></b> |
 	  <%= link_to t('header.logout'), destroy_user_session_path, method: :delete %>
 	<% else %>
-		<%= link_to 'Log in', new_user_session_path %> |
-		<%= link_to 'Register', new_user_registration_path %>
+		<%= link_to t('.login'), new_user_session_path %> |
+		<%= link_to t('.register'), new_user_registration_path %>
 	<% end %>
 </div>

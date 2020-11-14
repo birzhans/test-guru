@@ -41,8 +41,10 @@ ru:
       subject: "Вы успешно завершили тест на Test-Guru!"
 
   header:
-    welcome: 'Добро пожаловать'
-    logout: 'Выйти'
+    welcome: "Добро пожаловать"
+    logout: "Выйти"
+    login: "Вход"
+    register: "Регистрация"
 
   footer:
     author: '%{year}, Автор: Биржан Серик'
