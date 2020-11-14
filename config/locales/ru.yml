@@ -44,11 +44,6 @@ ru:
     show:
       progress: "Прогресс"
 
-  devise:
-    failure:
-      user:
-        unauthenticated: "Войдите для получения доступа"
-
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на Test-Guru!"
@@ -61,3 +56,4 @@ ru:
     author: '%{year}, Автор: Биржан Серик'
     about: 'Test-Guru это сайт для создания и прохождения тестов'
     thinknetica: 'Проект по базовому курсу Rails'
+    
