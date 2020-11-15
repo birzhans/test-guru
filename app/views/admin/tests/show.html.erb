@@ -1,31 +1,31 @@
 <p>
-	<strong>Title: </strong>
+	<strong><%= t('tests.index.title') %>: </strong>
 	<%= @test.title %>
 </p>
 
 <p>
-	<strong>Level: </strong>
+	<strong><%= t('tests.index.level') %>: </strong>
 	<%= @test.level %>
 </p>
 
 <p>
-	<strong>Category: </strong>
+	<strong><%= t('tests.index.category') %>: </strong>
 	<%= @test.category.title %>
 </p>
 
 <p>
-	<strong>Author: </strong>
+	<strong><%= t('.author') %>: </strong>
 	<%= @test.author.full_name %>
 </p>
 
-<p>Questions:</p>
+<p><%= t('.questions') %>:</p>
 
-<%= link_to 'New question', new_admin_test_question_path(@test) %>
+<%= link_to t('.new'), new_admin_test_question_path(@test) %>
 
 <ul>
 	<%= render partial: 'admin/questions/question', collection: @test.questions %>
 </ul>
 
 <p>
-	<%= link_to 'All tests', admin_tests_path %> | <%= link_to 'Edit', edit_admin_test_path(@test) %>		
+	<%= link_to t('admin.all_tests'), admin_tests_path %> | <%= link_to t('admin.tests.test.edit'), edit_admin_test_path(@test) %>		
 </p>

@@ -1,0 +1,91 @@
+ru:
+  helpers:
+    start: "Начать"
+    submit:
+      tests:
+        create: "Создать тест"
+        update: "Обновить тест"
+    select: "Пожалуйста выберите"
+
+  shared:
+      errors:
+        header:
+          few: "Обнаружено %{count} ошибки"
+          many: "Обнаружено %{count} ошибок"
+          one: "Обнаружена %{count} ошибка"
+          other: "%{Обнаружено %{count ошибки}"
+
+  label:
+    test:
+      title: "Название"
+      level: "Уровень"
+      category_id: "Категория"
+
+  tests:
+    index:
+      header: "Доступные тесты"
+      title: "Название"
+      level: "Уровень"
+      category: "Категория"
+
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершен!"
+      success: "Вы прошли тест!"
+      fail: "Вы не прошли тест :("
+    show:
+      progress: "Прогресс"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на Test-Guru!"
+
+  header:
+    welcome: "Добро пожаловать"
+    logout: "Выйти"
+    login: "Вход"
+    register: "Регистрация"
+
+  footer:
+    author: '%{year}, Автор: Биржан Серик'
+    about: 'Test-Guru это сайт для создания и прохождения тестов'
+    thinknetica: 'Проект по базовому курсу Rails'
+
+
+  admin:
+    nav:
+      header: "Панель администратора Test-Guru"
+      welcome: 'Добро пожаловать'
+      logout: 'Выйти'
+
+    all_tests: "Все тесты"
+
+    tests:
+      new:
+        header: "Создать тест"
+      create:
+        success: "Тест успешно создан"
+
+      edit:
+        header: "Изменить тест"
+      update:
+        success: "Тест успешно изменен"
+
+      destroy:
+        success: "Тест успешно удален"
+
+      index:
+        actions: "Действия"
+        new: "Создать тест"
+
+
+      show:
+        author: "Автор"
+        questions: "Вопросы"
+        new: "Создать вопрос"
+
+      test:
+        show: "Посмотреть"
+        edit: "Редактировать"
+        delete: "Удалить"
+        message: "Вы уверены?"

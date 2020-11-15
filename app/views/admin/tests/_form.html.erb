@@ -3,18 +3,18 @@
 	<%= render 'shared/errors', resource: @test %>
 
 	<p>
-		<%= form.label :title %>
+		<%= form.label :title %><br>
 		<%= form.text_field :title, id: :test_title %>
 	</p>
 
 	<p>
-		<%= form.label :level %>
+		<%= form.label :level %><br>
 		<%= form.number_field :level, id: :test_level %>
 	</p>
 
 	<p>
 		<%= form.label :category_id %>
-		<%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
+		<%= form.collection_select :category_id, Category.all, :id, :title, prompt: t('helpers.select') %>
 	</p>
 
 	<p><%= form.submit %></p>

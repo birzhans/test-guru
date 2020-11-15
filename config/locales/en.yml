@@ -30,4 +30,89 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  helpers:
+    start: "Start"
+    submit:
+      tests:
+        create: "Create test"
+        update: "Update test"
+    select: "Please select"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+
+
+  label:
+    test:
+      title: "Title"
+      level: "Level"
+      category_id: "Category"
+
+  tests:
+    index:
+      header: "Tricky tests"
+      title: "Title"
+      category: "Category"
+      questions: "Questions"
+
+  test_passages:
+    result:
+      header: "Test %{title} was successfully completed!"
+      success: "You have passed the test!"
+      fail: "You have failed the test :("
+    show:
+      progress: "Progress"
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed Test-Guru test!"
+
+  header:
+    welcome: 'Welcome'
+    logout: 'Log out'
+
+  footer:
+    author: '%{year}, Author: Birzhan Serik'
+    about: 'Test-Guru is a website for creating and passing tests'
+    thinknetica: "Rails basics course's project"
+
+  admin:
+    nav:
+      header: "Test-Guru admin panel"
+      welcome: 'Welcome'
+      logout: 'Log out'
+
+    all_tests: "All tests"
+
+    tests:
+      new:
+        header: "Create test"
+      create:
+        success: "Test was successfully created"
+
+      edit:
+        header: "Edit test"
+      update:
+        success: "Тест успешно изменен"
+
+      destroy:
+        success: "Test was successfully updated"
+
+      index:
+        actions: "Actions"
+        new: "Create test"
+
+
+      show:
+        author: "Author"
+        questions: "Questions"
+        new: "Create question"
+
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        message: "Are you sure?"

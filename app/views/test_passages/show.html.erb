@@ -9,6 +9,6 @@
 			<%= b.label %>
 		</p>
 	<% end %>
-	<p>Progress: <%= @test_passage.question_index %> / <%= @test_passage.test.questions.count %></p>
+	<p><%= t('.progress') %>: <%= @test_passage.question_index %> / <%= @test_passage.test.questions.count %></p>
 	<p><%= form.submit 'Next' %></p>
 <% end %>
