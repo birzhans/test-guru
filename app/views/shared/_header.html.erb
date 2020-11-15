@@ -1,13 +1,17 @@
 <nav class="navbar navbar-light bg-light p-3">
-	<%= link_to 'Test-Guru', root_path, class: "navbar-brand btn btn-outline-primary" %>
+  <% if current_user.is_a?(Admin) %>
+    <%= link_to 'Test-Guru', admin_tests_path, class: "navbar-brand btn btn-outline-primary" %>
+  <% else %>
+    <%= link_to 'Test-Guru', root_path, class: "navbar-brand btn btn-outline-primary" %>
+  <% end %>
 
-	<span class="navbar-text">
-		<% if user_signed_in? %>
-	  <%= t('header.welcome') %>, <b><%= current_user.email %></b> |
-	  <%= link_to t('header.logout'), destroy_user_session_path, method: :delete %>
-		<% else %>
-			<%= link_to t('.login'), new_user_session_path %> |
-			<%= link_to t('.register'), new_user_registration_path %>
-		<% end %>	
-	</span>
+  <span class="navbar-text">
+    <% if user_signed_in? %>
+    <%= t('header.welcome') %>, <b><%= current_user.email %></b> |
+    <%= link_to t('header.logout'), destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to t('.login'), new_user_session_path %> |
+      <%= link_to t('.register'), new_user_registration_path %>
+    <% end %> 
+  </span>
 </nav>

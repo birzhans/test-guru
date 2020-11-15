@@ -1,7 +1,7 @@
 <li>
-	<%= link_to answer.body, admin_answer_path(answer) %> |
-	<%= link_to t('admin.edit'), edit_admin_answer_path(answer) %> |
-	<%= link_to t('admin.delete'), admin_answer_path(answer), 
-												method: 'delete',
-												data: { confirm: 'Are you sure?' } %>
+  <%= link_to answer.body, admin_answer_path(answer) %> |
+  <%= link_to t('admin.edit'), edit_admin_answer_path(answer) %> |
+  <%= link_to t('admin.delete'), admin_answer_path(answer), 
+                        method: 'delete',
+                        data: { confirm: 'Are you sure?' } %>
 </li>

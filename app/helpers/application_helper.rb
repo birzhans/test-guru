@@ -1,4 +1,10 @@
 module ApplicationHelper
+
+  NOTICE_KEYS = {
+    alert: "alert alert-danger", notice: "alert alert-info", success: "alert alert-success",
+    warning: "alert alert-warning", primary: "alert alert-primary"
+  }
+
   def current_year
     Date.today.year
   end
@@ -8,10 +14,6 @@ module ApplicationHelper
   end
 
   def message_class(key)
-    if key == "alert"
-      "alert alert-danger"
-    else
-      "alert alert-success"
-    end
+    NOTICE_KEYS[key.to_sym]
   end
 end
