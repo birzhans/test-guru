@@ -34,6 +34,7 @@ en:
     start: "Start"
     yeap: "Yes"
     nope: "No" 
+    hello: "Hello"
     submit:
       tests:
         create: "Create test"
@@ -135,4 +136,5 @@ en:
     test: "Test"
     question: "Question"
     answer: "Answer"
+    enter: "Enter"
 

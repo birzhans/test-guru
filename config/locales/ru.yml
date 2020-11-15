@@ -2,7 +2,8 @@ ru:
   helpers:
     start: "Начать"
     yeap: "Да"
-    nope: "Нет" 
+    nope: "Нет"
+    hello: "Привет"
     submit:
       tests:
         create: "Создать тест"
