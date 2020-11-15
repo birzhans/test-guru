@@ -1,21 +1,30 @@
-<%= form_with model: [:admin, @test], local: true do |form| %>
+<div class="row mt-3">
+  <div class="col col-md-4">
+    <div class="card border-primary">
+      <div class="card-body">
+      	<%= form_with model: [:admin, @test], local: true do |form| %>
+      		<%= render 'shared/errors', resource: @test %>
+	        <div class="form-group">
+	          <p>
+	            <%= form.label :title %>
+	            <%= form.text_field :title, class: "form-control" %>
+	          </p>
 
-	<%= render 'shared/errors', resource: @test %>
+	          <p>
+	            <%= form.label :level %>
+	            <%= form.number_field :level, id: :test_level, class: "form-control"  %>
+	          </p>
 
-	<p>
-		<%= form.label :title %><br>
-		<%= form.text_field :title, id: :test_title %>
-	</p>
+	          <p>
+	            <%= form.label :category_id %>
+	            <%= form.collection_select :category_id, Category.all, 
+	            :id, :title, prompt: t('helpers.select'), class: "form-control"  %>
+	          </p>
 
-	<p>
-		<%= form.label :level %><br>
-		<%= form.number_field :level, id: :test_level %>
-	</p>
-
-	<p>
-		<%= form.label :category_id %>
-		<%= form.collection_select :category_id, Category.all, :id, :title, prompt: t('helpers.select') %>
-	</p>
-
-	<p><%= form.submit %></p>
-<% end %>
+	          <%= form.submit t('admin.enter'), class: "btn btn-primary" %>
+        </div>
+        	<% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -32,6 +32,8 @@
 en:
   helpers:
     start: "Start"
+    yeap: "Yes"
+    nope: "No" 
     submit:
       tests:
         create: "Create test"
@@ -112,7 +114,25 @@ en:
         new: "Create question"
 
       test:
-        show: "Show"
-        edit: "Edit"
-        delete: "Delete"
+
         message: "Are you sure?"
+
+      questions:
+      show:
+        question: "Вопрос"
+        answers: "Ответы"
+        new: "Новый ответ"
+
+    answers:
+      show:
+        correct: "Correct"
+
+
+
+    edit: "Edit"
+    delete: "Delete"
+    back: "Back"
+    test: "Test"
+    question: "Question"
+    answer: "Answer"
+

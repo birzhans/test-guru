@@ -20,12 +20,12 @@
 
 <p><%= t('.questions') %>:</p>
 
-<%= link_to t('.new'), new_admin_test_question_path(@test) %>
-
-<ul>
+<ol>
 	<%= render partial: 'admin/questions/question', collection: @test.questions %>
-</ul>
+</ol>
 
-<p>
-	<%= link_to t('admin.all_tests'), admin_tests_path %> | <%= link_to t('admin.tests.test.edit'), edit_admin_test_path(@test) %>		
-</p>
+<div class="mt-2">
+	<%= link_to t('.new'), new_admin_test_question_path(@test), class: "btn btn-primary" %>
+	<%= link_to t('admin.all_tests'), admin_tests_path, class: "btn btn-info" %>
+	<%= link_to t('admin.tests.test.edit'), edit_admin_test_path(@test), class: "btn btn-secondary" %>		
+</div>

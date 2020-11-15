@@ -1,9 +1,9 @@
-<h1>Test <%= @answer.question.test.title %></h1>
+<h1><%= t('admin.test') %> <%= @answer.question.test.title %></h1>
 
-<p><b>Question:</b><%= @answer.question.body %></p>
+<p><b><%= t('admin.question') %>: </b><%= @answer.question.body %></p>
 
-<p><b>Answer:</b> <%= @answer.body %></p>
-<p><b>Correct:</b> <%= @answer.correct %></p>
+<p><b><%= t('admin.answer') %>: </b> <%= @answer.body %></p>
+<p><b><%= t('.correct') %>: </b> <%= @answer.correct_s %></p>
 
-<%= link_to 'Edit', edit_admin_answer_path(@answer) %> |
-<%= link_to 'Back', admin_question_path(@answer.question) %>
+<%= link_to t('admin.edit'), edit_admin_answer_path(@answer) %> |
+<%= link_to t('admin.back'), admin_question_path(@answer.question) %>

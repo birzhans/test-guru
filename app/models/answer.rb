@@ -6,6 +6,10 @@ class Answer < ApplicationRecord
 
   scope :correct, -> { where(correct: true) }
 
+  def correct_s
+    self.correct ? I18n.t('helpers.yeap') : I18n.t('helpers.nope')
+  end
+
   private
 
   def validate_number_of_answers

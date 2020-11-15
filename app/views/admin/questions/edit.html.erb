@@ -1,4 +1,4 @@
-<h1>Update question</h1>
+<h1><%= form_header(@question) %></h1>
 
 <%= render 'form' %>
-<%= link_to 'Back', admin_test_path(@question.test) %>
+<%= link_to t('admin.back'), admin_test_path(@question.test) %>
