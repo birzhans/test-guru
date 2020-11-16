@@ -1,6 +1,9 @@
 ru:
   helpers:
     start: "Начать"
+    yeap: "Да"
+    nope: "Нет"
+    hello: "Привет"
     submit:
       tests:
         create: "Создать тест"
@@ -27,6 +30,7 @@ ru:
       title: "Название"
       level: "Уровень"
       category: "Категория"
+      questions: "Вопросы"
 
   test_passages:
     result:
@@ -85,7 +89,30 @@ ru:
         new: "Создать вопрос"
 
       test:
-        show: "Посмотреть"
         edit: "Редактировать"
         delete: "Удалить"
         message: "Вы уверены?"
+
+    questions:
+      show:
+        question: "Вопрос"
+        answers: "Ответы"
+        new: "Новый ответ"
+
+    answers:
+      show:
+        correct: "Верно"
+      new:
+        header: "Новый ответ"
+      edit:
+        header: "Изменить ответ %{body}"
+
+
+    create: "Создать"
+    edit: "Редактировать"
+    delete: "Удалить"
+    back: "Назад"
+    test: "Тест"
+    question: "Вопрос"
+    answer: "Ответ"
+    enter: "Отправить"

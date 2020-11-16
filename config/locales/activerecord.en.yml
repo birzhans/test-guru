@@ -2,6 +2,9 @@ en:
   activerecord:
     models:
       test: "Test"
+      question: "Question"
+      answer: "Answer"
+      user: "User"
 
     attributes:
       test:
@@ -9,6 +12,14 @@ en:
         level: "Level"
         category: "Category"
 
+      question:
+        body: "Body"
+
+      answer:
+        body: "Body"
+        correct: "Correct"
+
     errors:
       messages:
         blank: "can't be blank"
+        required: "is required"

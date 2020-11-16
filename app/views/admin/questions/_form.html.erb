@@ -1,11 +1,18 @@
-<%= form_with model: [:admin, @test, @question], local: true do |form| %>
-
-	<%= render 'shared/errors', resource: @question %>
-
-	<p>
-		<%= form.label :body %>
-		<%= form.text_field :body, id: :question_body %>
-	</p>
-
-	<p><%= form.submit %></p>
-<% end %>
+<div class="row mt-3">
+  <div class="col col-md-4">
+    <div class="card border-primary">
+      <div class="card-body">
+      	<%= form_with model: [:admin, @test, @question], local: true do |form| %>
+      		<%= render 'shared/errors', resource: @question %>
+	        <div class="form-group">
+	          <p>
+	            <%= form.label :body %>
+	            <%= form.text_field :body, class: "form-control" %>
+	          </p>
+          <%= form.submit t('admin.enter'), class: "btn btn-primary" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

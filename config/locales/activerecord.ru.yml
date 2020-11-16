@@ -2,12 +2,22 @@ ru:
   activerecord:
     models:
       test: "Тест"
+      question: "Вопрос"
+      answer: "Ответ"
+      user: "Пользаватель"
 
     attributes:
       test:
         title: "Название"
         level: "Уровень"
         category: "Категория"
+
+      question:
+        body: "Текст"
+
+      answer:
+        body: "Текст"
+        correct: "Верно"
 
     errors:
       messages:
