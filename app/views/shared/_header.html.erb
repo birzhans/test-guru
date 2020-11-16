@@ -1,9 +1,9 @@
 <nav class="navbar navbar-light bg-light p-3">
-  <% if current_user.is_a?(Admin) %>
-    <%= link_to 'Test-Guru', admin_tests_path, class: "navbar-brand btn btn-outline-primary" %>
-  <% else %>
-    <%= link_to 'Test-Guru', root_path, class: "navbar-brand btn btn-outline-primary" %>
+  <% if current_user&.admin? %>
+    <%= link_to t('admin.nav.header'), admin_tests_path, class: "navbar-brand btn btn-outline-primary" %>
   <% end %>
+
+    <%= link_to 'Test-Guru', root_path, class: "navbar-brand btn btn-outline-secondary" %>
 
   <span class="navbar-text">
     <% if user_signed_in? %>
