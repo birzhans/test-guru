@@ -60,6 +60,14 @@ en:
       title: "Title"
       category: "Category"
       questions: "Questions"
+    levels:
+      elementary: "Elementary"
+      easy: "Easy"
+      medium: "Medium"
+      advanced: "Advanced"
+      hard: "Hard"
+      ultimate: "Ultimate"
+      hero: "Hero"
 
   test_passages:
     result:

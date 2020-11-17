@@ -1,6 +1,6 @@
 <tr>
   <td><%= test.title %></td>
-  <td><%= test.level %></td>
+  <td><%= t("tests.levels.#{test.level_range}") %></td>
   <td><%= test.category.title %></td>
   <td><%= test.questions.count %></td>
   <td><%= button_to t('helpers.start'), start_test_path(test), class: "btn btn-primary" %></td>

@@ -31,6 +31,14 @@ ru:
       level: "Уровень"
       category: "Категория"
       questions: "Вопросы"
+    levels:
+      elementary: "Начинающий"
+      easy: "Легкий"
+      medium: "Средний"
+      advanced: "Опытный"
+      hard: "Сложный"
+      ultimate: "Предельный"
+      hero: "Герой"
 
   test_passages:
     result:
