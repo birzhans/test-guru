@@ -47,6 +47,10 @@ ru:
       fail: "Вы не прошли тест :("
     show:
       progress: "Прогресс"
+    gist: 
+      success: "Gist успешно сохранен!"
+      fail: "Во время сохранения Gist произошла ошибка"
+
 
   tests_mailer:
     completed_test:

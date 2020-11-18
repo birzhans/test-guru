@@ -1,6 +1,6 @@
 class Question < ApplicationRecord
-  belongs_to :test
-  has_many :answers
+  belongs_to :test, dependent: :destroy
+  has_many :answers, dependent: :destroy
 
   validates :body, presence: true
 end

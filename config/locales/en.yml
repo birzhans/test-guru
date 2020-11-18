@@ -76,6 +76,9 @@ en:
       fail: "You have failed the test :("
     show:
       progress: "Progress"
+    gist:
+      success: "Gist was successfully created!"
+      fail:  "An error occured while saving Gist"
 
   tests_mailer:
     completed_test:

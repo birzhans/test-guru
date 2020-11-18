@@ -4,7 +4,7 @@ class Test < ApplicationRecord
     0 => :elementary, 1 => :easy, 2 => :medium, 3 => :advanced, 4 => :hard,  5 => :ultimate
   }.freeze
 
-  belongs_to :category
+  belongs_to :category, dependent: :destroy
   belongs_to :author, class_name: 'User', optional:true
   has_many :questions, dependent: :destroy
   has_many :test_passages, dependent: :destroy
