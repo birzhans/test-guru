@@ -1,9 +1,8 @@
 <nav class="navbar navbar-dark bg-primary p-3">
   <%= link_to t('.header'), admin_tests_path, class: "navbar-brand btn btn-dark" %>
-  <%= link_to 'Test-Guru', root_path, class: "navbar-brand btn btn-outline-primary" %>
+
   <span class="navbar-text">
     <%= t('header.welcome') %>, <b><%= current_user.email %></b> |
-    <%= link_to "Gists", admin_gists_path %> |
     <%= link_to t('header.logout'), destroy_user_session_path, method: :delete %>
   </span>
 </nav>
