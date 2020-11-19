@@ -20,6 +20,8 @@ class TestPassagesController < ApplicationController
   def gist
     result = GistQuestionService.new(@test_passage.current_question).call
     url = result.url
+
+    current_user.gists.create(question_id: @test_passage.current_question.id, url: url)
     redirect_to @test_passage, notice: t('.message', url: url)
   end
 
