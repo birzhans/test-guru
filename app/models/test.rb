@@ -1,5 +1,10 @@
 class Test < ApplicationRecord
-  belongs_to :category
+
+  LEVELS = {
+    0 => :elementary, 1 => :easy, 2 => :medium, 3 => :advanced, 4 => :hard,  5 => :ultimate
+  }.freeze
+
+  belongs_to :category, dependent: :destroy
   belongs_to :author, class_name: 'User', optional:true
   has_many :questions, dependent: :destroy
   has_many :test_passages, dependent: :destroy
@@ -19,6 +24,10 @@ class Test < ApplicationRecord
 
 
   scope :by_category, -> (category_name) { joins(:category) }
+
+  def level_range
+    LEVELS[self.level] || :hero
+  end
 
 
   def self.tests_by_category(category_name)

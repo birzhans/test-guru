@@ -10,6 +10,9 @@ ru:
         update: "Обновить тест"
     select: "Пожалуйста выберите"
 
+  gist:
+    description: "Вопрос про #{title} в Test-Guru"
+
   shared:
       errors:
         header:
@@ -31,6 +34,14 @@ ru:
       level: "Уровень"
       category: "Категория"
       questions: "Вопросы"
+    levels:
+      elementary: "Начинающий"
+      easy: "Легкий"
+      medium: "Средний"
+      advanced: "Опытный"
+      hard: "Сложный"
+      ultimate: "Предельный"
+      hero: "Герой"
 
   test_passages:
     result:
@@ -39,6 +50,8 @@ ru:
       fail: "Вы не прошли тест :("
     show:
       progress: "Прогресс"
+    gist: 
+      message: "Gist успешно сохранен! %{url}"
 
   tests_mailer:
     completed_test:
@@ -107,7 +120,6 @@ ru:
       edit:
         header: "Изменить ответ %{body}"
 
-
     create: "Создать"
     edit: "Редактировать"
     delete: "Удалить"
@@ -116,3 +128,5 @@ ru:
     question: "Вопрос"
     answer: "Ответ"
     enter: "Отправить"
+    link: "Ссылка"
+    sender: "Автор"

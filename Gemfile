@@ -38,6 +38,11 @@ gem 'rails-i18n'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 5.0.0.alpha3'
 
+#GitHub client
+gem "octokit", "~> 4.0"
+
+#ENV
+gem 'dotenv-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
