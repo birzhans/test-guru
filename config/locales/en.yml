@@ -139,8 +139,9 @@ en:
       show:
         correct: "Correct"
 
-
-
+    gist:
+      description: "A question about #{title} from Test-Guru"
+      
     edit: "Edit"
     delete: "Delete"
     back: "Back"
