@@ -51,7 +51,8 @@ ru:
     show:
       progress: "Прогресс"
     gist: 
-      message: "Gist успешно сохранен! %{url}"
+      success: "Gist успешно сохранен! %{url}"
+      failure: "Произошла ошибка во время сохранения Gist."
 
   tests_mailer:
     completed_test:

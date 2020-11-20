@@ -1,4 +1,7 @@
 class GistQuestionService
+
+  attr_reader :client
+
   def initialize(question, client: nil)
     @question = question
     @test = @question.test
@@ -7,6 +10,10 @@ class GistQuestionService
 
   def call
     @client.create_gist(gist_params)
+  end
+
+  def url
+    self.client.last_response.headers[:location]
   end
 
   private

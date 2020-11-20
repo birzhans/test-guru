@@ -80,7 +80,8 @@ en:
     show:
       progress: "Progress"
     gist:
-      message: "Gist was successfully created! %{url}"
+      success: "Gist was successfully created! %{url}"
+      failure: "An error occured while creating Gist."
 
   tests_mailer:
     completed_test:
