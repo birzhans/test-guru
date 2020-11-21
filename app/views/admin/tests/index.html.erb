@@ -3,7 +3,11 @@
 <table class="table mt-4">
 	<thead>
 		<tr>
-			<th><%= t('tests.index.title') %></th>
+			<th>
+				<%= t('tests.index.title') %>
+				<%= octicon 'arrow-up', class: 'text-success hide' %>
+				<%= octicon 'arrow-down', class: 'text-success hide' %>
+				</th>
 			<th><%= t('tests.index.level') %></th>
 			<th><%= t('tests.index.category') %></th>
 			<th><%= t('tests.index.questions') %></th>
