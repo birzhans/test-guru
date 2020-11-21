@@ -78,6 +78,9 @@ en:
       success: "You have passed the test!"
       fail: "You have failed the test :("
     show:
+      header: "Passing the %{title}"
+      gist: "Create Gist"
+      next: "Next"
       progress: "Progress"
     gist:
       success: "Gist was successfully created! %{url}"
