@@ -1,0 +1,6 @@
+<tr>
+<td><%= link_to "#{gist.question.test.title}", admin_test_path(gist.question.test.id) %></td>
+<td><%= link_to "#{truncate(gist.question.body, length: 25)}", admin_question_path(gist.question.id) %></td>
+<td><%= gist.user.email %></td>
+<td><%= link_to "#{gist.url}", gist.url %></td>
+</tr>

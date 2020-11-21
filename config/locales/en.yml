@@ -41,6 +41,9 @@ en:
         update: "Update test"
     select: "Please select"
 
+  gist:
+    description: "Question about #{title} from Test-Guru"
+
   shared:
     errors:
       header:
@@ -60,6 +63,14 @@ en:
       title: "Title"
       category: "Category"
       questions: "Questions"
+    levels:
+      elementary: "Elementary"
+      easy: "Easy"
+      medium: "Medium"
+      advanced: "Advanced"
+      hard: "Hard"
+      ultimate: "Ultimate"
+      hero: "Hero"
 
   test_passages:
     result:
@@ -68,6 +79,9 @@ en:
       fail: "You have failed the test :("
     show:
       progress: "Progress"
+    gist:
+      success: "Gist was successfully created! %{url}"
+      failure: "An error occured while creating Gist."
 
   tests_mailer:
     completed_test:
@@ -128,8 +142,9 @@ en:
       show:
         correct: "Correct"
 
-
-
+    gist:
+      description: "A question about #{title} from Test-Guru"
+      
     edit: "Edit"
     delete: "Delete"
     back: "Back"
@@ -137,4 +152,5 @@ en:
     question: "Question"
     answer: "Answer"
     enter: "Enter"
-
+    link: "Link"
+    sender: "Sender"
