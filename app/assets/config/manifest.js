@@ -1,2 +1,2 @@
-//= link_tree ../images
+//= require_self
 //= link_directory ../stylesheets .css
