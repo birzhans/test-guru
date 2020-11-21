@@ -12,6 +12,11 @@ class GistQuestionService
     @client.create_gist(gist_params)
   end
 
+  def success?
+    statuses = *(200..209)
+    statuses.include?(self.client.last_response.status.to_i)
+  end
+
   def url
     self.client.last_response.headers[:location]
   end
