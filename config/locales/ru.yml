@@ -49,7 +49,10 @@ ru:
       success: "Вы прошли тест!"
       fail: "Вы не прошли тест :("
     show:
+      header: "Прохождение теста %{title}"
       progress: "Прогресс"
+      gist: "Создать Gist"
+      next: "Дальше"
     gist: 
       success: "Gist успешно сохранен! %{url}"
       failure: "Произошла ошибка во время сохранения Gist."
