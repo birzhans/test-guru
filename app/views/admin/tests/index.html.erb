@@ -1,22 +1,22 @@
 <h2><%= t('tests.index.header') %></h2>
 
 <table class="table mt-4">
-	<thead>
-		<tr>
-			<th><%= t('tests.index.title') %></th>
-			<th><%= t('tests.index.level') %></th>
-			<th><%= t('tests.index.category') %></th>
-			<th><%= t('tests.index.questions') %></th>
-			<th colspan="2"><%= t('.actions') %></th>
-		</tr>
-	</thead>
-	<%= render @tests %>
+  <thead>
+    <tr>
+      <th class="sort-by-title pointer">
+        <%= t('tests.index.title') %>
+        <%= octicon 'arrow-up', class: 'text-success hide' %>
+        <%= octicon 'arrow-down', class: 'text-success hide' %>
+        </th>
+      <th><%= t('tests.index.level') %></th>
+      <th><%= t('tests.index.category') %></th>
+      <th><%= t('tests.index.questions') %></th>
+      <th colspan="2"><%= t('.actions') %></th>
+    </tr>
+  </thead>
+  <%= render @tests %>
 </table>
 
 <div class="mt-4">
-	<%= link_to t('.new'), new_admin_test_path, class: "btn btn-primary" %>
+  <%= link_to t('.new'), new_admin_test_path, class: "btn btn-primary" %>
 </div>
-
-
-
-
