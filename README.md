@@ -18,5 +18,7 @@
 * Gist - note leaved by student in case if question was not clear.
 
 _Entity Relational Diagram_ is available at Wiki page.
+
 **Stack**: Ruby/Rails, Sqlite, Sass, Bootstrap
+
 **Gems**: Devise, I18n, Octokit, letter_opener
