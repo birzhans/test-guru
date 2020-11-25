@@ -7,24 +7,24 @@
 }
 
 .testsTable {
-	width: 100%;
-	margin: 8px;
-	margin-top: 33px;
+  width: 100%;
+  margin: 8px;
+  margin-top: 33px;
 }
 
 .testsTable th {
-	border-bottom: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 .testsTable tr {
-	border-bottom: 1px solid #e6e7e8;
-	height: 40px;
+  border-bottom: 1px solid #e6e7e8;
+  height: 40px;
 }
 
 .notMatch {
-	border-color: red;
+  border-color: red;
 }
 
 .match {
-	border-color: green;
+  border-color: green;
 }
