@@ -7,6 +7,9 @@ document.addEventListener('turbolinks:load', function() {
 function sortRowsByTitle() {
     var table = document.querySelector('table')
 
+    var sortedTable = document.createElement('table')
+    sortedTable.classList.add("testsTable")
+
     var rows = table.querySelectorAll('tr')
     var sortedRows = []
 
@@ -23,15 +26,13 @@ function sortRowsByTitle() {
         this.querySelector('.octicon-arrow-down').classList.remove('hide')
         this.querySelector('.octicon-arrow-up').classList.add('hide')
     }
-
-    var sortedTable = document.createElement('table')
-
-    sortedTable.classList.add('table')
+    
     sortedTable.appendChild(rows[0])
 
     for (var i = 0; i < sortedRows.length; i++) {
         sortedTable.appendChild(sortedRows[i])
     }
+
 
     table.parentNode.replaceChild(sortedTable, table)
 }

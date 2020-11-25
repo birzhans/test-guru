@@ -5,3 +5,18 @@
 .hide {
   display: none !important;;
 }
+
+.testsTable {
+	width: 100%;
+	margin: 8px;
+	margin-top: 33px;
+}
+
+.testsTable th {
+	border-bottom: 1px solid black;
+}
+
+.testsTable tr {
+	border-bottom: 1px solid #e6e7e8;
+	height: 40px;
+}
