@@ -11,9 +11,15 @@ function passMatch(){
         return
 
     if (password.value === password_confirmation.value) {
+        password.style.removeProperty('borderColor')
+        password_confirmation.style.removeProperty('borderColor')
+
         password.style.borderColor = "green"
         password_confirmation.style.borderColor = "green"
     } else {
+        password.style.removeProperty('borderColor')
+        password_confirmation.style.removeProperty('borderColor')
+        
         password.style.borderColor = "red"
         password_confirmation.style.borderColor = "red"
     }
