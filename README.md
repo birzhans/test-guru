@@ -3,14 +3,20 @@
 
 #### Entities of website
 
-* Teacher - an author of test.
-
-* Student - person which passes test.
+* Student.
 
 * Test - an object containing set of questions.
 
-* Question - a data that is asked.
+* Question.
 
-* Answer - reply to a question.
+* Answer - one of the possible variants that can be answered.
 
 * Result - data on how student have passed a test.
+
+* Admin - manages tests (crud).
+
+* Gist - note leaved by student in case if question was not clear.
+
+### Entity Relational diagram is available at Wiki page.
+### Stack: Ruby/Rails, Sqlite, Sass, Bootstrap
+### Gems: Devise, I18n, Octokit, letter_opener
