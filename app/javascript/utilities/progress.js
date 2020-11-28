@@ -4,5 +4,5 @@ document.addEventListener('turbolinks:load', function () {
 });
 
 function addProgress(progress) {
-  document.querySelector('.progress-bar').style["width"] = progress + "%"
+    document.querySelector('.progress-bar').style["width"] = progress + "%"
 }
