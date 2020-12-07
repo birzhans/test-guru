@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 users = User.create!([
    {
-     username: 'jack', email: 'jack@mail.com',
-     password: jack_isBest, test: tests.last
+     email: 'jack@mail.com',
+     password: 'qwerty',
   }
  ])
 
@@ -19,13 +19,13 @@ categories = Category.create!([
 
 tests = Test.create!([
    { title: 'WW1', level: 1, category:  categories.first,
-     author_id: users[0].id },
+   },
    { title: 'geometry', level: 2, category: categories.last
-     author_id: users[0].id }
+   }
  ])
 
 questions = Question.create!([
-   { body: 'what year did ww1 started?', test: tests.first },
+   { body: 'which year did ww1 started?', test: tests.first },
    { body: 'which country made declaration of ww1?', test: tests.first },
    { body: 'how to find S of triangle?', test: tests.last },
    { body: 'sin of 60?', test: tests.last }
