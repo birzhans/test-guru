@@ -50,6 +50,14 @@ en:
         one: "%{count} error detected"
         other: "%{count} errors detected"
 
+  feedbacks:
+    new:
+      header: "Отправить отзыв"
+      message: "Message"
+    create:
+      success: "Отзыв успешно отправлен!"
+      failure: "Во время отправки отзыва произошла ошибка!"
+
 
   label:
     test:

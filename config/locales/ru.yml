@@ -13,6 +13,14 @@ ru:
   gist:
     description: "Вопрос про #{title} в Test-Guru"
 
+  feedbacks:
+    new:
+      header: "Отправить отзыв"
+      message: "Сообщение"
+    create:
+      success: "Отзыв успешно отправлен!"
+      failure: "Во время отправки отзыва произошла ошибка!"
+
   shared:
       errors:
         header:
