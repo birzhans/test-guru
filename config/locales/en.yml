@@ -52,11 +52,11 @@ en:
 
   feedbacks:
     new:
-      header: "Отправить отзыв"
+      header: "Send feedback"
       message: "Message"
     create:
-      success: "Отзыв успешно отправлен!"
-      failure: "Во время отправки отзыва произошла ошибка!"
+      success: "feedback was successfully saved!"
+      failure: "An error occured while saving your feedback!"
 
 
   label:
@@ -97,6 +97,10 @@ en:
   tests_mailer:
     completed_test:
       subject: "You just completed Test-Guru test!"
+
+  feedback_mailer:
+    send_feedback:
+      subject: "A new feedback received from Test-Guru"  
 
   header:
     welcome: 'Welcome'

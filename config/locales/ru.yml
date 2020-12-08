@@ -18,8 +18,8 @@ ru:
       header: "Отправить отзыв"
       message: "Сообщение"
     create:
-      success: "Отзыв успешно отправлен!"
-      failure: "Во время отправки отзыва произошла ошибка!"
+      success: "Отзыв успешно сохранен!"
+      failure: "Во время сохранения отзыва произошла ошибка!"
 
   shared:
       errors:
@@ -68,6 +68,10 @@ ru:
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на Test-Guru!"
+
+  feedback_mailer:
+    send_feedback:
+      subject: "Получен новый отзыв Test-Guru"  
 
   header:
     welcome: "Добро пожаловать"
