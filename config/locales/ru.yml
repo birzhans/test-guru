@@ -50,6 +50,8 @@ ru:
       hard: "Сложный"
       ultimate: "Предельный"
       hero: "Герой"
+    start:
+      empty: "У данного теста нет вопросов."
 
   test_passages:
     result:

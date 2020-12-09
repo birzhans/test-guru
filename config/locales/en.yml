@@ -79,6 +79,8 @@ en:
       hard: "Hard"
       ultimate: "Ultimate"
       hero: "Hero"
+    start:
+      empty: "Test does not have any questions."
 
   test_passages:
     result:
