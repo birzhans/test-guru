@@ -21,6 +21,7 @@ class Test < ApplicationRecord
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
   scope :advanced, -> { where(level: 5..Float::INFINITY) }
+  scope :published, -> { where(complete: true) }
 
 
   scope :by_category, -> (category_name) { joins(:category) }
@@ -37,19 +38,11 @@ class Test < ApplicationRecord
     .pluck(:title)
   end
 
-  def delete_any_answer
-    if self.questions.any?
-      self.questions.each do |q|
-        if q.answers.any?
-          q.answers.first.destroy
-        end
-      end
-    end
-  end
-
-  def delete_any_question
-    if self.questions.any?
-      self.questions.first.destroy
+  def completed
+    if self.complete
+      I18n.t('helpers.yeap')
+    else
+      I18n.t('helpers.nope')
     end
   end
 end

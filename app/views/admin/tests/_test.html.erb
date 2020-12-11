@@ -9,6 +9,7 @@
   <td class="align-middle"><%= test.level %></td>
   <td class="align-middle"><%= test.category.title %></td>
   <td class="align-middle"><%= test.questions.count %></td>
+  <td class="align-middle"><%= test.completed  %></td>
   <td class="align-middle">
     <%= link_to t('admin.edit'), 
         edit_admin_test_path(test),
@@ -19,6 +20,14 @@
     <%= link_to t('admin.delete'),
         admin_test_path(test),
         method: :delete,
-        data: { confirm: t('.message') } %> 
+        data: { confirm: t('.delete_message') } %> 
   </td>
+  <% if !test.complete %>
+    <td class="align-middle">
+      <%= link_to t('admin.complete'),
+          update_publish_admin_test_path(test),
+          method: :patch,
+          data: { confirm: t('.publish_message') } %> 
+    </td>
+  <% end %>
 </tr>
