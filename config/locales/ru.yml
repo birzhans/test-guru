@@ -63,7 +63,8 @@ ru:
       progress: "Прогресс"
       gist: "Создать Gist"
       next: "Дальше"
-      invalid: "Данный тест не валиден"
+      invalid_questions: "У данного теста отсутсвуют вопросы"
+      invalid_answers: "Один из вопросов не имеет ответов"
     gist: 
       success: "Gist успешно сохранен! %{url}"
       failure: "Произошла ошибка во время сохранения Gist."

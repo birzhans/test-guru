@@ -2,8 +2,10 @@ class TestPassagesController < ApplicationController
   before_action :find_test_passage, only: %i[show result update gist]
 
   def show
-    if !@test_passage.test.questions.any? or !@test_passage.current_question.answers.any?
-      redirect_to root_path, alert: t('.invalid')
+    if @test_passage.test.questions.blank?
+      redirect_to root_path, alert: t('.invalid_questions')
+    elsif @test_passage.current_question.answers.blank?
+      redirect_to root_path, alert: t('.invalid_answers')
     end
   end
 

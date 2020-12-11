@@ -31,7 +31,7 @@ class Admin::QuestionsController < Admin::BaseController
   end
 
   def destroy
-    @question.destroy!
+    @question.destroy
     redirect_to admin_tests_path
   end
 

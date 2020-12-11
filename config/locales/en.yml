@@ -92,6 +92,8 @@ en:
       gist: "Create Gist"
       next: "Next"
       progress: "Progress"
+      invalid_questions: "Picked test has not questions."
+      invalid_answers: "One of the questions does not have answers"
     gist:
       success: "Gist was successfully created! %{url}"
       failure: "An error occured while creating Gist."
