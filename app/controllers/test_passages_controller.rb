@@ -4,7 +4,9 @@ class TestPassagesController < ApplicationController
   def show
     if @test_passage.test.questions.blank?
       redirect_to root_path, alert: t('.invalid_questions')
-    elsif @test_passage.current_question.answers.blank?
+    end
+
+    if @test_passage.current_question.answers.blank?
       redirect_to root_path, alert: t('.invalid_answers')
     end
   end
