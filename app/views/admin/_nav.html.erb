@@ -2,7 +2,7 @@
   <%= link_to t('.header'), admin_tests_path, class: "navbar-brand btn btn-dark" %>
   <%= link_to 'Test-Guru', root_path, class: "navbar-brand btn btn-outline-primary" %>
   <span class="navbar-text">
-    <b><%= current_user.email %></b> |
+    <b><%= link_to current_user.email, user_path %></b> |
     <%= link_to "Gists", admin_gists_path %> |
     <%= link_to t('header.logout'), destroy_user_session_path, method: :delete %>
   </span>

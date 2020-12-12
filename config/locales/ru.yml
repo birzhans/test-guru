@@ -13,6 +13,12 @@ ru:
   gist:
     description: "Вопрос про #{title} в Test-Guru"
 
+  users:
+    show:
+      header: "Личная страничка"
+      email: "Почта: "
+      badges: "Бэйджи: "
+
   feedbacks:
     new:
       header: "Отправить отзыв"
