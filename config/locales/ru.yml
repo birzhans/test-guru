@@ -93,13 +93,41 @@ ru:
     nav:
       header: "Панель администратора Test-Guru"
       welcome: 'Добро пожаловать'
+      new_badge: "Создать Бэйдж"
+      badges: "Все Бэйджи"
+      gists: "Список Гистов"
       logout: 'Выйти'
 
     all_tests: "Все тесты"
 
+    badges:
+      index:
+        header: "Список Бэйджов"
+        title: "Название"
+        octicon: "Иконка"
+        color: "Цвет"
+        look: "Вид"
+        actions: "Действия"
+      new:
+        header: "Создать Бэйдж"
+      edit:
+        header: "Изменить Бэйдж"
+      create:
+        success: "Бэйдж успешно создан!"
+        failure: "Во время сохранения Бэйджа произошла ошибка!"
+      badge:
+        delete_message: "Вы уверены что хотите удалить данный Бэйдж?"
+      form:
+        title: "Название"
+        octicon: "Иконка"
+        get_octicon: "Здесь можно выбрать иконку"
+        color: "Цвет иконки"
+
     tests:
       new:
         header: "Создать тест"
+      edit:
+        header: "Редактировать тест"
       create:
         success: "Тест успешно создан"
       index:

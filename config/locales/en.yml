@@ -119,6 +119,7 @@ en:
     nav:
       header: "Test-Guru admin panel"
       welcome: 'Welcome'
+      badge: "Create Badge"
       logout: 'Log out'
 
     all_tests: "All tests"

@@ -1,0 +1,33 @@
+<div class="row mt-3">
+  <div class="col col-md-4">
+    <div class="card border-primary">
+      <div class="card-body">
+        <%= form_with model: [:admin, @badge], local: true do |form| %>
+          <%= render 'shared/errors', resource: @badge %>
+          <div class="form-group">
+            <p>
+              <%= form.label t('.title') %>
+              <%= form.text_field :title, class: "form-control" %>
+            </p>
+
+            <p>
+              <%= form.label t('.octicon') %>
+              <%= form.text_field :octicon, class: "form-control" %>
+            </p>
+
+            <p>
+              <a href="https://styleguide.github.com/primer/components/octicons/"><%= t(".get_octicon") %></a>
+            </p>
+
+            <p>
+              <%= form.label t('.color') %>
+              <%= form.text_field :color, class: "form-control" %>
+            </p>
+
+            <%= form.submit t('admin.enter'), class: "btn btn-primary" %>
+        </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
