@@ -4,10 +4,10 @@ class Test < ApplicationRecord
     0 => :elementary, 1 => :easy, 2 => :medium, 3 => :advanced, 4 => :hard,  5 => :ultimate
   }.freeze
 
-  belongs_to :category, dependent: :destroy
+  belongs_to :category
   belongs_to :author, class_name: 'User', optional:true
-  has_many :questions, dependent: :destroy
   has_many :test_passages, dependent: :destroy
+  has_many :questions, dependent: :destroy
   has_many :users, through: :test_passages
 
 
@@ -21,6 +21,7 @@ class Test < ApplicationRecord
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
   scope :advanced, -> { where(level: 5..Float::INFINITY) }
+  scope :published, -> { where(complete: true) }
 
 
   scope :by_category, -> (category_name) { joins(:category) }
@@ -35,5 +36,13 @@ class Test < ApplicationRecord
     .where(categories: { title: category_name })
     .order(title: :desc)
     .pluck(:title)
+  end
+
+  def completed
+    if self.complete
+      I18n.t('helpers.yeap')
+    else
+      I18n.t('helpers.nope')
+    end
   end
 end

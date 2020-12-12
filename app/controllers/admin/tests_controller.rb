@@ -1,5 +1,5 @@
 class Admin::TestsController < Admin::BaseController
-  before_action :find_test, only: %i[destroy show edit update start update_inline]
+  before_action :find_test, only: %i[destroy show edit update start update_inline update_publish]
   before_action :find_tests, only: %i[index update_inline]
 
   def index
@@ -42,6 +42,14 @@ class Admin::TestsController < Admin::BaseController
 
   def update_inline
     if @test.update(test_params)
+      redirect_to admin_tests_path
+    else
+      render :index
+    end
+  end
+
+  def update_publish
+    if @test.update(complete: true)
       redirect_to admin_tests_path
     else
       render :index

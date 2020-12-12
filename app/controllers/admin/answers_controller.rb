@@ -32,7 +32,7 @@ class Admin::AnswersController < Admin::BaseController
 
   def destroy
     @answer.destroy
-    redirect_to admin_question_path(@answer.question)
+    redirect_to admin_tests_path
   end
 
 

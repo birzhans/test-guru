@@ -5,7 +5,7 @@
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
     <p>
-      <%= b.check_box id: "answer_ids#{b.object.id}" %>
+      <%= b.check_box id: "answer_ids#{b.object.id}", class: "checkBox" %>
       <%= b.label %>
     </p>
   <% end %>
@@ -18,7 +18,8 @@
   <p><%= link_to t('.gist'), gist_test_passage_path(@test_passage), method: :post %></p>
   <p><%= form.submit t('.next'), class: "btn btn-primary next",
                                  data: { 
-                                 progress: progress(@test_passage) } %>
+                                 progress: progress(@test_passage) }, 
+                                 disabled: true %>
                                   
   </p>
 <% end %>

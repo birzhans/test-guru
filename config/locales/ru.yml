@@ -13,6 +13,14 @@ ru:
   gist:
     description: "Вопрос про #{title} в Test-Guru"
 
+  feedbacks:
+    new:
+      header: "Отправить отзыв"
+      message: "Сообщение"
+    create:
+      success: "Отзыв успешно сохранен!"
+      failure: "Во время сохранения отзыва произошла ошибка!"
+
   shared:
       errors:
         header:
@@ -42,6 +50,8 @@ ru:
       hard: "Сложный"
       ultimate: "Предельный"
       hero: "Герой"
+    start:
+      empty: "У данного теста нет вопросов."
 
   test_passages:
     result:
@@ -53,6 +63,8 @@ ru:
       progress: "Прогресс"
       gist: "Создать Gist"
       next: "Дальше"
+      invalid_questions: "У данного теста отсутсвуют вопросы"
+      invalid_answers: "Один из вопросов не имеет ответов"
     gist: 
       success: "Gist успешно сохранен! %{url}"
       failure: "Произошла ошибка во время сохранения Gist."
@@ -60,6 +72,10 @@ ru:
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на Test-Guru!"
+
+  feedback_mailer:
+    send_feedback:
+      subject: "Получен новый отзыв Test-Guru"  
 
   header:
     welcome: "Добро пожаловать"
@@ -86,6 +102,15 @@ ru:
         header: "Создать тест"
       create:
         success: "Тест успешно создан"
+      index:
+        header: "Доступные тесты"
+        title: "Название"
+        level: "Уровень"
+        category: "Категория"
+        questions: "Вопросы"
+        published: "Опубликован"
+        actions: "Действия"
+        new: "Создать тест"
 
       edit:
         header: "Изменить тест"
@@ -95,11 +120,6 @@ ru:
       destroy:
         success: "Тест успешно удален"
 
-      index:
-        actions: "Действия"
-        new: "Создать тест"
-
-
       show:
         author: "Автор"
         questions: "Вопросы"
@@ -108,7 +128,8 @@ ru:
       test:
         edit: "Редактировать"
         delete: "Удалить"
-        message: "Вы уверены?"
+        delete_message: "Вы уверены что хотите удалить данный тест?"
+        publish_message: "Вы уверены что ваш тест готов?"
 
     questions:
       show:
@@ -134,3 +155,4 @@ ru:
     enter: "Отправить"
     link: "Ссылка"
     sender: "Автор"
+    complete: "Публиковать"
