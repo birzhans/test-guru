@@ -24,6 +24,11 @@
               <%= form.text_field :color, class: "form-control" %>
             </p>
 
+            <p>
+              <%= form.label :rule_id %><br>
+              <%= form.select :rule_id, Badge.rule_ids.keys.map { |w| [w.humanize, w] }, {}, { class: "form-control" } %>
+            </p>
+
             <%= form.submit t('admin.enter'), class: "btn btn-primary" %>
         </div>
           <% end %>

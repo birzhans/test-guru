@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_12_125543) do
+ActiveRecord::Schema.define(version: 2020_12_13_101721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,10 @@ ActiveRecord::Schema.define(version: 2020_12_12_125543) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "color", default: "black"
+    t.integer "rule_id", null: false
+    t.string "rule_value"
+    t.index ["octicon", "color"], name: "index_badges_on_octicon_and_color", unique: true
+    t.index ["rule_id", "rule_value"], name: "index_badges_on_rule_id_and_rule_value", unique: true
     t.index ["user_id"], name: "index_badges_on_user_id"
   end
 
