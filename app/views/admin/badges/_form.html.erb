@@ -26,7 +26,37 @@
 
             <p>
               <%= form.label t('.rule') %>
-              <%= form.select :rule_id, options_for_select(Badge.rules.map { |k,v| [k, v] }), class: "form-control" %>
+              <%= form.select :rule, 
+              Badge.rules,
+              prompt: t('helpers.select'),
+              class: "form-control rule" %>
+            </p>
+
+            <p>
+              <%= form.label t('.categories'), class: "hide categories" %>
+              <%= form.select :rule_value, 
+              Category.all.sort_by(&:title).map { |c| [c.title, c.id] }, {},
+              prompt: t('helpers.select'),
+              class: "form-control rule_categories hide" %>
+            </p>
+
+            <p>
+              <%= form.label t('.tests'), class: "hide tests"  %>
+              <%= form.select :rule_value, 
+              Test.all.map { |t| [t.title + " (Level " + t.level.to_s + ")", t.id] }, {},
+              prompt: t('helpers.select'),
+              class: "form-control rule_tests hide" %>
+            </p>
+
+            <p>
+              <%= form.label t('.levels'), class: "hide levels"  %>
+              <%= form.select :rule_value, 
+              Test.distinct.pluck(:level).sort, {}, 
+              class: "form-control rule_levels hide" %>
+            </p>
+
+            <p>
+              <%= form.label t('.all'), class: "hide all"  %>
             </p>
 
             <%= form.submit t('admin.enter'), class: "btn btn-primary" %>

@@ -1,8 +1,6 @@
 class Badge < ApplicationRecord
   has_and_belongs_to_many :users
 
-  enum rule_id: { on_the_first_try: 0, all_by_category: 1, all_by_level: 2, overall: 3 }
-
   validates :title,
             presence: true,
             uniqueness: true
@@ -11,9 +9,11 @@ class Badge < ApplicationRecord
             presence: true,
             uniqueness: { scope: :color }
 
-  validates :rule_id,
+  validates :rule,
             presence: true,
             uniqueness: { scope: :rule_value }
+
+  validate :validate_rule_value
 
   def self.octicons
     ["file-code", "flame", "heart", "mortar-board", "pulse", "rocket", "ruby"]
@@ -24,6 +24,12 @@ class Badge < ApplicationRecord
   end
 
   def self.rules
-    { all_categories: 1, all: 2, first_try: 3, all_by_level: 4 }
+    ["all_by_category", "all_tests", "first_try", "all_by_level"]
+  end
+
+  private
+
+  def validate_rule_value
+
   end
 end
