@@ -31,9 +31,9 @@ class Test < ApplicationRecord
   end
 
 
-  def self.tests_by_category(category_name)
-    by_category(category_name)
-    .where(categories: { title: category_name })
+  def self.tests_by_category(category_id)
+    by_category(category_id)
+    .where(categories: { id: category_id })
     .order(title: :desc)
     .pluck(:title)
   end

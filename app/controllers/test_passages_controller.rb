@@ -1,3 +1,5 @@
+require_relative '../services/badge_service'
+
 class TestPassagesController < ApplicationController
   before_action :find_test_passage, only: %i[show result update gist]
 
@@ -12,15 +14,21 @@ class TestPassagesController < ApplicationController
   end
 
   def result
+    if @test_passage.passed
+      new_badges = BadgeService.new(@test_passage).call
+      if new_badges
+        flash[:notice] = t('.new_badges', new_badges: new_badges)
+      end
+    end
   end
 
   def update
     @test_passage.accept!(params[:answer_ids])
     if @test_passage.completed?
       @test_passage.update(passed: true)
+
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
-      awarding
     else
       render :show
     end
@@ -39,17 +47,6 @@ class TestPassagesController < ApplicationController
   end
 
   private
-
-  def awarding
-    badges = BadgeService.new(@test_passage).call
-
-    if badges.any?
-      badges.each do |badge|
-        badge.users << @test_passage.user
-      end
-      flash["notice"] = t('.new_badges')
-    end
-  end
 
   def find_test_passage
     @test_passage = TestPassage.find(params[:id])

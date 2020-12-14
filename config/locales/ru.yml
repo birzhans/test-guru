@@ -64,6 +64,7 @@ ru:
       header: "Тест %{title} успешно завершен!"
       success: "Вы прошли тест!"
       fail: "Вы не прошли тест :("
+      new_badges: "Вы получили новые Бэйджи! %{new_badges}"
     show:
       header: "Прохождение теста %{title}"
       progress: "Прогресс"
@@ -74,8 +75,7 @@ ru:
     gist: 
       success: "Gist успешно сохранен! %{url}"
       failure: "Произошла ошибка во время сохранения Gist."
-    update:
-      new_badges: "Вы получили новые Бэйджи!"
+      
 
   tests_mailer:
     completed_test:

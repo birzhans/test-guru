@@ -29,6 +29,10 @@ class User < ApplicationRecord
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
 
+  def completed_tests
+    tests.where('test_passages.passed = ?', true)
+  end
+
   def admin?
     self.is_a?(Admin)
   end

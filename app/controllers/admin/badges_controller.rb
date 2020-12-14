@@ -17,7 +17,7 @@ class Admin::BadgesController < Admin::BaseController
     if @badge.save
       redirect_to admin_badges_path, notice: t('.success')
     else
-      redirect_to admin_badges_path, alert: t('.failure')
+      render :new, alert: t('.failure')
     end
   end
 
@@ -25,7 +25,7 @@ class Admin::BadgesController < Admin::BaseController
     if @badge.update(badge_params)
       redirect_to admin_badges_path
     else
-      render :new
+      render :edit
     end
   end
 
