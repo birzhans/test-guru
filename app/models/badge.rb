@@ -30,6 +30,19 @@ class Badge < ApplicationRecord
   private
 
   def validate_rule_value
-
+    case rule
+    when "all_by_category"
+      if Category.all.pluck(:id).exclude?(rule_value.to_i)
+        errors.add(:category, "Invalid category id.")
+      end
+    when "first_try"
+      if Test.all.pluck(:id).exclude?(rule_value.to_i)
+        errors.add(:test, "Invalid test id.")
+      end
+    when "all_by_level"
+      if Test.distinct.pluck(:level).exclude?(rule_value.to_i)
+        errors.add(:test, "Invalid test level.")
+      end
+    end
   end
 end
