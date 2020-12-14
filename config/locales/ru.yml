@@ -74,6 +74,8 @@ ru:
     gist: 
       success: "Gist успешно сохранен! %{url}"
       failure: "Произошла ошибка во время сохранения Gist."
+    update:
+      new_badges: "Вы получили новые Бэйджи!"
 
   tests_mailer:
     completed_test:

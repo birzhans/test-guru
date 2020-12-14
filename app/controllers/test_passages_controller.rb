@@ -41,7 +41,14 @@ class TestPassagesController < ApplicationController
   private
 
   def awarding
-    badges = BadgeCheckingService.new(@test_passage).calls
+    badges = BadgeService.new(@test_passage).call
+
+    if badges.any?
+      badges.each do |badge|
+        badge.users << @test_passage.user
+      end
+      flash["notice"] = t('.new_badges')
+    end
   end
 
   def find_test_passage

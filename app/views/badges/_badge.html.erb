@@ -6,12 +6,6 @@
     <div class="card-body">
       <h5 class="card-title"><%= badge.title %></h5>
       <p class="card-text"><%= badge.color %></p>
-      <%= link_to t('admin.edit'), edit_admin_badge_path(badge) %>
-      <%= link_to t('admin.delete'), 
-            admin_badge_path(badge),
-            method: :delete,
-            data: { confirm: t('.delete_message') }
-            %>
     </div>
   </div>
 </div>
