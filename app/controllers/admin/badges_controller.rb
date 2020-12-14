@@ -17,7 +17,7 @@ class Admin::BadgesController < Admin::BaseController
     if @badge.save
       redirect_to admin_badges_path, notice: t('.success')
     else
-      redirect_to admin_badges_path, notice: t('.failure')
+      redirect_to admin_badges_path, alert: t('.failure')
     end
   end
 
@@ -36,6 +36,6 @@ class Admin::BadgesController < Admin::BaseController
   end
 
   def badge_params
-    params.require(:badge).permit(:title, :octicon, :color)
+    params.require(:badge).permit(:title, :octicon, :color, :rule_id)
   end
 end

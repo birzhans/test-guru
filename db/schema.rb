@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_13_101721) do
+ActiveRecord::Schema.define(version: 2020_12_14_060428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,16 +25,16 @@ ActiveRecord::Schema.define(version: 2020_12_13_101721) do
   end
 
   create_table "badges", force: :cascade do |t|
-    t.string "title"
-    t.string "octicon"
+    t.string "title", null: false
+    t.string "octicon", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "color", default: "black"
-    t.integer "rule_id", null: false
+    t.string "rule", null: false
     t.string "rule_value"
     t.index ["octicon", "color"], name: "index_badges_on_octicon_and_color", unique: true
-    t.index ["rule_id", "rule_value"], name: "index_badges_on_rule_id_and_rule_value", unique: true
+    t.index ["rule", "rule_value"], name: "index_badges_on_rule_and_rule_value", unique: true
     t.index ["user_id"], name: "index_badges_on_user_id"
   end
 
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 2020_12_13_101721) do
     t.integer "correct_questions", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "passed", default: false
     t.index ["current_question_id"], name: "index_test_passages_on_current_question_id"
     t.index ["test_id"], name: "index_test_passages_on_test_id"
     t.index ["user_id"], name: "index_test_passages_on_user_id"

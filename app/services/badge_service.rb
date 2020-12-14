@@ -1,0 +1,3 @@
+class BadgeService
+
+end

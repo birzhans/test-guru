@@ -12,7 +12,7 @@
 
             <p>
               <%= form.label t('.octicon') %>
-              <%= form.text_field :octicon, class: "form-control" %>
+              <%= form.select :octicon, Badge.octicons, class: "form-control" %>
             </p>
 
             <p>
@@ -21,12 +21,12 @@
 
             <p>
               <%= form.label t('.color') %>
-              <%= form.text_field :color, class: "form-control" %>
+              <%= form.select :color, Badge.colors, class: "form-control" %>
             </p>
 
             <p>
-              <%= form.label :rule_id %><br>
-              <%= form.select :rule_id, Badge.rule_ids.keys.map { |w| [w.humanize, w] }, {}, { class: "form-control" } %>
+              <%= form.label t('.rule') %>
+              <%= form.select :rule_id, options_for_select(Badge.rules.map { |k,v| [k, v] }), class: "form-control" %>
             </p>
 
             <%= form.submit t('admin.enter'), class: "btn btn-primary" %>
