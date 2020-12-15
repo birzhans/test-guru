@@ -1,4 +1,4 @@
-class User < ApplicationRecord
+ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable,
@@ -27,10 +27,6 @@ class User < ApplicationRecord
 
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
-  end
-
-  def completed_tests
-    tests.where('test_passages.passed = ?', true)
   end
 
   def admin?

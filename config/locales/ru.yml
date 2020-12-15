@@ -10,6 +10,13 @@ ru:
         update: "Обновить тест"
     select: "Пожалуйста выберите"
 
+    badges_helper:
+      message:
+        one: "Вы получили один Бэйдж!"
+        few: "Вы получили %{count} Бэйджа!"
+        many: "Вы получили %{count} Бэйджов!"
+        other: "Вы получили %{count} Бэйджа!"
+
   gist:
     description: "Вопрос про #{title} в Test-Guru"
 

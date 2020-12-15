@@ -26,12 +26,12 @@ class TestPassage < ApplicationRecord
     score >= POINTS_TO_COMPLETE
   end
 
-  def question_index
-    test.questions.index(current_question) + 1
+  def failed?
+    !passed?
   end
 
-  def get_badges
-
+  def question_index
+    test.questions.index(current_question) + 1
   end
 
   private

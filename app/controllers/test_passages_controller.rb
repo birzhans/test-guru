@@ -1,4 +1,5 @@
 require_relative '../services/badge_service'
+require_relative '../helpers/badges_helper'
 
 class TestPassagesController < ApplicationController
   before_action :find_test_passage, only: %i[show result update gist]
@@ -14,11 +15,10 @@ class TestPassagesController < ApplicationController
   end
 
   def result
-    if @test_passage.passed
-      new_badges = BadgeService.new(@test_passage).call
-      if new_badges
-        flash[:notice] = t('.new_badges', new_badges: new_badges)
-      end
+    return if @test_passage.failed?
+    badges = BadgeService.new(@test_passage).call
+    if badges
+      flash[:notice] = helpers.badge_notification(badges)
     end
   end
 
