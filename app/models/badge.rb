@@ -21,10 +21,6 @@ class Badge < ApplicationRecord
     %w(all_by_category all_tests first_try all_by_level)
   end
 
-  def honored?(test_passage)
-    send("check_#{rule}", test_passage)
-  end
-
   private
 
   def validate_rule_value
@@ -47,28 +43,5 @@ class Badge < ApplicationRecord
     if Test.distinct.pluck(:level).exclude?(rule_value.to_i)
       errors.add(:test, "Invalid test level.")
     end
-  end
-
-  def check_all_by_category(test_passage)
-    category_id = test_passage.test.category.id
-    tests_by_category = Test.where(category_id: category_id)
-    user_tests_by_category = test_passage.user.completed_tests.where(category_id: category_id)
-
-    tests_by_category.count == user_tests_by_category.count
-  end
-
-  def check_all_tests(test_passage)
-    test_passage.user.completed_tests.uniq.count == Test.all.count
-  end
-
-  def check_first_try(test_passage)
-    TestPassage.where('test_id = ? AND user_id = ?', test_passage.test_id, test_passage.user_id).count == 1
-  end
-
-  def check_all_by_level(test_passage)
-    level_tests = Test.where('level = ?', level)
-    user_level_tests = test_passage.user.completed_tests.where('level = ?', level)
-
-    level_tests.count == user_level_tests.count
   end
 end
