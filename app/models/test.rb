@@ -20,9 +20,11 @@ class Test < ApplicationRecord
 
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
-  scope :advanced, -> { where(level: 5..Float::INFINITY) }
+  scope :advanced, -> { where(level: 5..10) }
   scope :published, -> { where(complete: true) }
 
+  scope :passed, ->(user_id) { joins(:test_passages).
+        where('test_passages.passed = ? AND test_passages.user_id = ?', true, user_id) }
 
   scope :by_category, -> (category_name) { joins(:category) }
 
@@ -31,9 +33,9 @@ class Test < ApplicationRecord
   end
 
 
-  def self.tests_by_category(category_name)
-    by_category(category_name)
-    .where(categories: { title: category_name })
+  def self.tests_by_category(category_id)
+    by_category(category_id)
+    .where(categories: { id: category_id })
     .order(title: :desc)
     .pluck(:title)
   end

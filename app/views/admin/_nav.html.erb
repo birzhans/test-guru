@@ -2,8 +2,21 @@
   <%= link_to t('.header'), admin_tests_path, class: "navbar-brand btn btn-dark" %>
   <%= link_to 'Test-Guru', root_path, class: "navbar-brand btn btn-outline-primary" %>
   <span class="navbar-text">
-    <%= t('header.welcome') %>, <b><%= current_user.email %></b> |
+    <b><%= link_to current_user.email, user_path %></b> |
     <%= link_to "Gists", admin_gists_path %> |
     <%= link_to t('header.logout'), destroy_user_session_path, method: :delete %>
   </span>
 </nav>
+
+
+<ul class="nav text-light bg-dark p-1">
+  <li class="nav-item">
+    <%= link_to t(".new_badge"), new_admin_badge_path, class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to t(".badges"), admin_badges_path, class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to t('.gists'), admin_gists_path, class: "nav-link" %>
+  </li>
+</ul>

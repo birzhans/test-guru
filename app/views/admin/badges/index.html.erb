@@ -1,0 +1,12 @@
+<h1><%= t(".header")%></h1>
+
+<table class="table">
+  <thead>
+    <th scope="col"><%= t('.title') %></th>
+    <th scope="col"><%= t('.octicon') %></th>
+    <th scope="col"><%= t('.color') %></th>
+    <th scope="col"><%= t('.look') %></th>
+    <th colspan="2"><%= t('.actions') %></th>
+  </thead>
+    <%= render @badges %>
+</table>

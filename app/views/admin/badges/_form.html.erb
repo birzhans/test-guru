@@ -1,0 +1,68 @@
+<div class="row mt-3">
+  <div class="col col-md-4">
+    <div class="card border-primary">
+      <div class="card-body">
+        <%= form_with model: [:admin, @badge], local: true do |form| %>
+          <%= render 'shared/errors', resource: @badge %>
+          <div class="form-group">
+            <p>
+              <%= form.label t('.title') %>
+              <%= form.text_field :title, class: "form-control" %>
+            </p>
+
+            <p>
+              <%= form.label t('.octicon') %>
+              <%= form.select :octicon, Badge.octicons, class: "form-control" %>
+            </p>
+
+            <p>
+              <a href="https://styleguide.github.com/primer/components/octicons/"><%= t(".get_octicon") %></a>
+            </p>
+
+            <p>
+              <%= form.label t('.color') %>
+              <%= form.select :color, Badge.colors, class: "form-control" %>
+            </p>
+
+            <p>
+              <%= form.label t('.rule') %>
+              <%= form.select :rule, 
+              Badge.rules,
+              prompt: t('helpers.select'),
+              class: "form-control rule" %>
+            </p>
+
+            <p>
+              <%= form.label t('.categories'), class: "hide categories" %>
+              <%= form.select :rule_value, 
+              Category.all.sort_by(&:title).map { |c| [c.title, c.id] }, {},
+              prompt: t('helpers.select'),
+              class: "form-control rule_categories hide" %>
+            </p>
+
+            <p>
+              <%= form.label t('.tests'), class: "hide tests"  %>
+              <%= form.select :rule_value, 
+              Test.all.map { |t| [t.title + " (Level " + t.level.to_s + ")", t.id] }, {},
+              prompt: t('helpers.select'),
+              class: "form-control rule_tests hide" %>
+            </p>
+
+            <p>
+              <%= form.label t('.levels'), class: "hide levels"  %>
+              <%= form.select :rule_value, 
+              Test.distinct.pluck(:level).sort, {}, 
+              class: "form-control rule_levels hide" %>
+            </p>
+
+            <p>
+              <%= form.label t('.all'), class: "hide all"  %>
+            </p>
+
+            <%= form.submit t('admin.enter'), class: "btn btn-primary" %>
+        </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>

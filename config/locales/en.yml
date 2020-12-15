@@ -44,6 +44,12 @@ en:
   gist:
     description: "Question about #{title} from Test-Guru"
 
+  users:
+    show:
+      header: "Personal page"
+      email: "Email: "
+      badges: "Badges: "
+
   shared:
     errors:
       header:
@@ -97,6 +103,8 @@ en:
     gist:
       success: "Gist was successfully created! %{url}"
       failure: "An error occured while creating Gist."
+    update:
+      new_badges: "Вы получили новые Бэйджи!"
 
   tests_mailer:
     completed_test:
@@ -119,9 +127,41 @@ en:
     nav:
       header: "Test-Guru admin panel"
       welcome: 'Welcome'
+      new_badge: "Create Badge"
+      badges: "All Badges"
+      gists: "All Gists"
       logout: 'Log out'
 
     all_tests: "All tests"
+
+    badges:
+      index:
+        header: "Badges list"
+        title: "Title"
+        octicon: "Icon"
+        color: "Color"
+        look: "View"
+        actions: "Actions"
+      new:
+        header: "Create Badge"
+      edit:
+        header: "Edit Badge"
+      create:
+        success: "Badge was successfully created!"
+        failure: "An error occured while creating Badge!"
+      badge:
+        delete_message: "Are you sure?"
+      form:
+        title: "Title"
+        octicon: "Icon"
+        color: "Color"
+        get_octicon: "Check out all icons here"
+        rule: "Rule"
+        all: "All tests passed"
+        categories: "All tests passed by category: "
+        tests: "Passing a test from the first try"
+        levels: "Passing all tests with level: "
+
 
     tests:
       new:

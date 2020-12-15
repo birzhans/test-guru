@@ -1,0 +1,13 @@
+<tr>
+  <td><%= badge.title %></td>
+  <td><%= badge.octicon %></td>
+  <td><%= badge.color %></td>
+  <td><%= octicon(badge.octicon, color: badge.color, height: 25) %></td>
+  <td><%= link_to t('admin.edit'), edit_admin_badge_path(badge) %></td>
+  <td><%= link_to t('admin.delete'), 
+          admin_badge_path(badge),
+          method: :delete,
+          data: { confirm: t('.delete_message') }
+          %>
+  </td>
+</tr>

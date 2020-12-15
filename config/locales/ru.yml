@@ -10,8 +10,21 @@ ru:
         update: "Обновить тест"
     select: "Пожалуйста выберите"
 
+    badges_helper:
+      message:
+        one: "Вы получили один Бэйдж!"
+        few: "Вы получили %{count} Бэйджа!"
+        many: "Вы получили %{count} Бэйджов!"
+        other: "Вы получили %{count} Бэйджа!"
+
   gist:
     description: "Вопрос про #{title} в Test-Guru"
+
+  users:
+    show:
+      header: "Личная страничка"
+      email: "Почта: "
+      badges: "Бэйджи: "
 
   feedbacks:
     new:
@@ -58,6 +71,7 @@ ru:
       header: "Тест %{title} успешно завершен!"
       success: "Вы прошли тест!"
       fail: "Вы не прошли тест :("
+      new_badges: "Вы получили новые Бэйджи! %{new_badges}"
     show:
       header: "Прохождение теста %{title}"
       progress: "Прогресс"
@@ -68,6 +82,7 @@ ru:
     gist: 
       success: "Gist успешно сохранен! %{url}"
       failure: "Произошла ошибка во время сохранения Gist."
+      
 
   tests_mailer:
     completed_test:
@@ -93,13 +108,46 @@ ru:
     nav:
       header: "Панель администратора Test-Guru"
       welcome: 'Добро пожаловать'
+      new_badge: "Создать Бэйдж"
+      badges: "Все Бэйджи"
+      gists: "Список Гистов"
       logout: 'Выйти'
 
     all_tests: "Все тесты"
 
+    badges:
+      index:
+        header: "Список Бэйджов"
+        title: "Название"
+        octicon: "Иконка"
+        color: "Цвет"
+        look: "Вид"
+        actions: "Действия"
+      new:
+        header: "Создать Бэйдж"
+      edit:
+        header: "Изменить Бэйдж"
+      create:
+        success: "Бэйдж успешно создан!"
+        failure: "Во время сохранения Бэйджа произошла ошибка!"
+      badge:
+        delete_message: "Вы уверены что хотите удалить данный Бэйдж?"
+      form:
+        title: "Название"
+        octicon: "Иконка"
+        get_octicon: "Здесь можно выбрать иконку"
+        color: "Цвет иконки"
+        rule: "Правило"
+        all: "Прохождение всех тестов"
+        categories: "Прохождение всех тестов в категории"
+        tests: "Прохождение теста с первой попытки"
+        levels: "Прохождение всех тестов с уровнем"
+
     tests:
       new:
         header: "Создать тест"
+      edit:
+        header: "Редактировать тест"
       create:
         success: "Тест успешно создан"
       index:

@@ -1,0 +1,7 @@
+<h1><%= t('.header') %></h1>
+<h4><%= t('.email') +  current_user.email %></h4>
+<p><%= t('.badges') %></p>
+<div class="row row-cols-1 row-cols-md-3">
+  <%= render current_user.badges %> 
+</div>
+
