@@ -15,19 +15,27 @@ class TestPassage < ApplicationRecord
   end
 
   def completed?
-    current_question.nil?
+    current_question.nil? || expired?
   end
 
   def score
     correct_questions * 100 / test.questions.count
   end
 
-  def passed?
-    score >= POINTS_TO_COMPLETE
+  def time_passed
+    Time.now - created_at
+  end
+
+  def time_left
+    (test.duration * 60 - time_passed).to_i
   end
 
   def failed?
-    !passed?
+    score < POINTS_TO_COMPLETE || expired?
+  end
+
+  def expired?
+    time_left < 0
   end
 
   def question_index
