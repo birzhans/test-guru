@@ -12,6 +12,11 @@ class Test < ApplicationRecord
 
 
   validates :title, presence: true, uniqueness: { scope: [:title, :level] }
+  validates :duration, numericality: {
+    only_integer: true,
+    greater_than_or_equal_to: 1,
+    less_than_or_equal_to: 120
+  }
   validates :level, numericality: {
     only_integer: true,
     greater_than_or_equal_to: 0,
@@ -21,7 +26,7 @@ class Test < ApplicationRecord
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
   scope :advanced, -> { where(level: 5..10) }
-  scope :published, -> { where(complete: true) }
+  scope :published, -> { where(published: true) }
 
   scope :passed, ->(user_id) { joins(:test_passages).
         where('test_passages.passed = ? AND test_passages.user_id = ?', true, user_id) }
@@ -40,8 +45,8 @@ class Test < ApplicationRecord
     .pluck(:title)
   end
 
-  def completed
-    if self.complete
+  def public
+    if self.published
       I18n.t('helpers.yeap')
     else
       I18n.t('helpers.nope')

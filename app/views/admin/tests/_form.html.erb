@@ -16,9 +16,14 @@
             </p>
 
             <p>
-              <%= form.label :category_id %>
+              <%= form.label :category %>
               <%= form.collection_select :category_id, Category.all, 
               :id, :title, prompt: t('helpers.select'), class: "form-control"  %>
+            </p>
+
+            <p>
+              <%= form.label :duration %>
+              <%= form.number_field :duration, id: :test_duration, class: "form-control"  %>
             </p>
 
             <%= form.submit t('admin.enter'), class: "btn btn-primary" %>

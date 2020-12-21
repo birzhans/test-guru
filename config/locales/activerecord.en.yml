@@ -10,7 +10,8 @@ en:
       test:
         title: "Title"
         level: "Level"
-        category: "Category"
+        category_id: "Category"
+        duration: "Duration (in minutes)"
 
       question:
         body: "Body"

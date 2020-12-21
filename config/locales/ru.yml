@@ -46,7 +46,8 @@ ru:
     test:
       title: "Название"
       level: "Уровень"
-      category_id: "Категория"
+      category: "Категория"
+      duration: "Длительность (в минутах)"
 
   tests:
     index:
@@ -54,6 +55,7 @@ ru:
       title: "Название"
       level: "Уровень"
       category: "Категория"
+      duration: "Длительность (в минутах)"
       questions: "Вопросы"
     levels:
       elementary: "Начинающий"
@@ -70,6 +72,7 @@ ru:
     result:
       header: "Тест %{title} успешно завершен!"
       success: "Вы прошли тест!"
+      expired: "Вы не прошли тест так как время для выполнения теста закончилось!"
       fail: "Вы не прошли тест :("
       new_badges: "Вы получили новые Бэйджи! %{new_badges}"
     show:
@@ -77,6 +80,7 @@ ru:
       progress: "Прогресс"
       gist: "Создать Gist"
       next: "Дальше"
+      time_left: "Осталось (сек):"
       invalid_questions: "У данного теста отсутсвуют вопросы"
       invalid_answers: "Один из вопросов не имеет ответов"
     gist: 
